@@ -1,0 +1,19 @@
+uuid: 3afd4cf3-dea3-4307-8351-be751ba3875d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: AeW1SEDgb1OTQACAWGhzvMknMYAJlcZu0jljfeU3oso
+name: Article
+type: article
+description: 'Use <em>articles</em> to add news.'
+help: ''
+new_revision: true
+preview_mode: 2
+display_submitted: true

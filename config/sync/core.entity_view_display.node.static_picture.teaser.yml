@@ -1,0 +1,24 @@
+uuid: ff88bfd1-1e25-41ac-9c68-4d4a396fe470
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.static_picture.field_ad_title
+    - field.field.node.static_picture.field_picture
+    - node.type.static_picture
+  module:
+    - user
+id: node.static_picture.teaser
+targetEntityType: node
+bundle: static_picture
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_ad_title: true
+  field_picture: true

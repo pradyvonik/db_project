@@ -1,0 +1,41 @@
+uuid: cdeb1522-62ee-4753-b848-db44a7f28c52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.static_picture.field_ad_title
+    - field.field.node.static_picture.field_picture
+    - image.style.thumbnail
+    - node.type.static_picture
+  module:
+    - image
+    - text
+id: node.static_picture.default
+targetEntityType: node
+bundle: static_picture
+mode: default
+content:
+  field_ad_title:
+    type: text_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_picture:
+    type: image_image
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  title: true
+  uid: true

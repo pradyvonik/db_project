@@ -1,0 +1,15 @@
+uuid: 9257e322-20ed-4ea8-9588-2c9f4c976c5d
+langcode: en
+status: true
+dependencies: {  }
+name: social_media_logo
+label: 'Social media logo (30x30)'
+effects:
+  6fb1b964-ff06-45f4-b69f-149f698e121b:
+    uuid: 6fb1b964-ff06-45f4-b69f-149f698e121b
+    id: image_scale
+    weight: 1
+    data:
+      width: 30
+      height: 30
+      upscale: false

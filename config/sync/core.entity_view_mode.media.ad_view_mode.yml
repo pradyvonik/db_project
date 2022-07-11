@@ -1,0 +1,10 @@
+uuid: cab5c212-7aad-4ea6-ac4e-5166d947125f
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.ad_view_mode
+label: 'AD view mode'
+targetEntityType: media
+cache: true

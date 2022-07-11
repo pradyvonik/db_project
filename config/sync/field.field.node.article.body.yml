@@ -1,0 +1,29 @@
+uuid: ff0eb115-b2e2-4ece-92ba-4880d5426be9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.article
+  module:
+    - text
+_core:
+  default_config_hash: IjZnOLWk1Pjq3WRg2pLSA1ERh7Po7izCq_p6UztZr2c
+id: node.article.body
+field_name: body
+entity_type: node
+bundle: article
+label: Body
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: "<p><span><span><span><span><span><span><span>Refreshingly, what was expected of her was the same thing that was expected of Lara Stone: to take a beautiful picture.</span></span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><strong><span><span>You must learn one thing. The world was made to be free in. Give up all the other worlds.</span></span></strong></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>So simple, yet so essential, the white shirt is the foundation of any wardrobe. It’s also the most multi-functional item, taking you from work to play with just the quick unfastening of a couple of buttons.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>There was a time in the industry not too long ago, when it seemed that the high fashion world was using plus size models as a headline-grabbing gimmick see the groundbreaking cover.</span></span></span></span></span></span></p>\r\n<img alt=\"cartree\" data-align=\"center\" data-caption=\"Emotional discomfort, when accepted, rises, crests and falls in a series of waves.\" data-entity-type=\"file\" data-entity-uuid=\"b77713a4-c255-4b06-8bdf-fd58fd4601d3\" src=\"/sites/default/files/inline-images/article.png\" />\r\n<p><span><span><span><span><span><span>Refreshingly, what was expected of her was the same thing that was expected of Lara Stone: to take a beautiful picture.</span></span></span></span></span></span></p>\r\n\r\n<h2><span><span><span><strong><span><span>The main thing that you have to remember on this journey is just be nice to everyone.</span></span></strong></span></span></span></h2>\r\n\r\n<p><span><span><span><span><span><span>The model is talking about booking her latest gig, modeling WordPress underwear in the brand latest Perfectly Fit campaign, which was shot by Lachian Bailey. It was such a surreal moment cried she admitted</span></span></span></span></span></span></p>\r\n"
+    summary: ''
+    format: basic_html
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

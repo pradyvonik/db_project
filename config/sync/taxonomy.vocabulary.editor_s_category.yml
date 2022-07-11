@@ -1,0 +1,8 @@
+uuid: 1f75f695-d536-47d0-900f-890e5ce9677e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Editor''s category'
+vid: editor_s_category
+description: 'Make proposals for users to read'
+weight: 0

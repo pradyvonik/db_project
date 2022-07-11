@@ -1,0 +1,21 @@
+uuid: ce387afd-0c87-400a-86b0-bed09443e93f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ad_title
+    - node.type.static_picture
+  module:
+    - text
+id: node.static_picture.field_ad_title
+field_name: field_ad_title
+entity_type: node
+bundle: static_picture
+label: 'AD title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
