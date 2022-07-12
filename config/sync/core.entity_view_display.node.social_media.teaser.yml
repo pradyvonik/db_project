@@ -6,19 +6,39 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.social_media.field_social_media_link
     - field.field.node.social_media.field_social_media_logo
+    - image.style.social_media_logo
     - node.type.social_media
   module:
+    - image
+    - link
     - user
 id: node.social_media.teaser
 targetEntityType: node
 bundle: social_media
 mode: teaser
 content:
-  links:
-    settings: {  }
+  field_social_media_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    weight: 100
+    weight: 1
+    region: content
+  field_social_media_logo:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: social_media_logo
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
-  field_social_media_link: true
-  field_social_media_logo: true
+  links: true

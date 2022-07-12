@@ -3,15 +3,17 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_social_media_link
     - field.storage.node.field_social_media_logo
     - image.style.social_media_logo
     - node.type.social_media
   module:
     - image
+    - link
     - node
     - user
 id: social_media_view
-label: 'Social media view'
+label: 'Social media views'
 module: views
 description: ''
 tag: ''
@@ -24,18 +26,18 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Social media view'
+      title: 'Header social media view'
       fields:
-        title:
-          id: title
-          table: node_field_data
-          field: title
+        field_social_media_link:
+          id: field_social_media_link
+          table: node__field_social_media_link
+          field: field_social_media_link
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -67,7 +69,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -75,11 +77,15 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: string
+          click_sort_column: uri
+          type: link
           settings:
-            link_to_entity: true
-          group_column: value
+            trim_length: 80
+            url_only: false
+            url_plain: false
+            rel: '0'
+            target: '0'
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -102,8 +108,8 @@ display:
           alter:
             alter_text: false
             text: ''
-            make_link: false
-            path: ''
+            make_link: true
+            path: '{{ field_social_media_link }}'
             absolute: false
             external: false
             replace_spaces: false
@@ -185,15 +191,83 @@ display:
           id: type
           table: node_field_data
           field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
           entity_type: node
           entity_field: type
           plugin_id: bundle
+          operator: in
           value:
             social_media: social_media
           group: 1
+          exposed: false
           expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
             operator_limit_selection: false
             operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_social_media_logo_alt:
+          id: field_social_media_logo_alt
+          table: node__field_social_media_logo
+          field: field_social_media_logo_alt
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: word
+          value: 'facebook, instagram, twitter'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -222,13 +296,15 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_social_media_link'
         - 'config:field.storage.node.field_social_media_logo'
   block_1:
     id: block_1
-    display_title: Block
+    display_title: 'Header Social Media'
     display_plugin: block
     position: 1
     display_options:
+      display_description: ''
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -238,4 +314,23 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_social_media_link'
+        - 'config:field.storage.node.field_social_media_logo'
+  block_2:
+    id: block_2
+    display_title: 'Footer Social Media'
+    display_plugin: block
+    position: 1
+    display_options:
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_social_media_link'
         - 'config:field.storage.node.field_social_media_logo'

@@ -8,12 +8,13 @@ dependencies:
     - taxonomy.vocabulary.editor_s_category
   content:
     - 'taxonomy_term:editor_s_category:175dd61f-34d5-4d44-af15-55f940ea2e8f'
+    - 'taxonomy_term:editor_s_category:bde38030-333d-43fe-85ab-34d20260bff7'
   module:
     - node
     - taxonomy
     - user
 id: footer_editor_picks
-label: 'Footer Editor Picks'
+label: 'Footer Editor Categories'
 module: views
 description: ''
 tag: ''
@@ -152,7 +153,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            - 20
+            - 21
           group: 1
           exposed: false
           expose:
@@ -189,7 +190,11 @@ display:
           limit: true
           error_message: true
       style:
-        type: grid
+        type: default
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
       row:
         type: 'entity:node'
         options:
@@ -218,10 +223,107 @@ display:
       tags: {  }
   block_1:
     id: block_1
-    display_title: Block
+    display_title: 'Editor Picks'
     display_plugin: block
     position: 1
     display_options:
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            article: article
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_editorial_target_id:
+          id: field_editorial_target_id
+          table: node__field_editorial
+          field: field_editorial_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            - 20
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+          vid: editor_s_category
+          type: textfield
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_2:
+    id: block_2
+    display_title: 'Must Read'
+    display_plugin: block
+    position: 2
+    display_options:
+      display_description: ''
       display_extenders: {  }
     cache_metadata:
       max-age: -1
