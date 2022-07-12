@@ -1,0 +1,8 @@
+uuid: 77c4fb9c-7549-48c6-b28c-d590a3b0616c
+langcode: en
+status: true
+dependencies: {  }
+id: footer_social_media
+label: 'Footer social media'
+revision: 0
+description: ''

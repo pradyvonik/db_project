@@ -1,0 +1,22 @@
+uuid: 0c136f17-2bdb-4afc-8be0-c429fdfce1af
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_site_email
+    - field.field.block_content.footer_site_email.body
+  module:
+    - text
+id: block_content.footer_site_email.default
+targetEntityType: block_content
+bundle: footer_site_email
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

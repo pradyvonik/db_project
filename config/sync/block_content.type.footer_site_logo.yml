@@ -1,0 +1,8 @@
+uuid: 55940cbd-7924-4778-bff2-3c870ff2b734
+langcode: en
+status: true
+dependencies: {  }
+id: footer_site_logo
+label: 'Footer site logo'
+revision: 0
+description: ''
