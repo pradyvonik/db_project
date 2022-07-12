@@ -1,0 +1,8 @@
+uuid: 58f2ebbf-f8ba-4b2e-b429-c07a2664e024
+langcode: en
+status: true
+dependencies: {  }
+name: Category
+vid: section
+description: 'LifeNews article sections'
+weight: 0

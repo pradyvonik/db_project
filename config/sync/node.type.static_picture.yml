@@ -1,0 +1,17 @@
+uuid: ea066b2e-68d8-4102-a53e-4942f6afdbc8
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Static picture'
+type: static_picture
+description: 'Content type for ADs and footer images row.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
