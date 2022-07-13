@@ -11,7 +11,7 @@ dependencies:
 id: footersiteinfo
 theme: olivero
 region: footer_top
-weight: -9
+weight: -11
 provider: null
 plugin: 'block_content:303edfd4-ccbd-4cc9-bfb5-e703f132aafe'
 settings:

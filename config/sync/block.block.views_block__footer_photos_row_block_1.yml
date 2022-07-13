@@ -1,21 +1,21 @@
-uuid: 8b677e90-8ecf-40fb-87b3-b00bc517876f
+uuid: e1b84f3a-b56d-427a-a1a6-f5889b9ba315
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.footer_editor_picks
+    - views.view.footer_photos_row
   module:
     - views
   theme:
     - olivero
-id: views_block__footer_editor_picks_block_2
+id: views_block__footer_photos_row_block_1
 theme: olivero
-region: content_below
+region: footer_bottom
 weight: -10
 provider: null
-plugin: 'views_block:footer_editor_picks-block_2'
+plugin: 'views_block:footer_photos_row-block_1'
 settings:
-  id: 'views_block:footer_editor_picks-block_2'
+  id: 'views_block:footer_photos_row-block_1'
   label: ''
   label_display: visible
   provider: views
