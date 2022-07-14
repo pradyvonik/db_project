@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.full_html
     - node.type.article
     - node.type.page
     - taxonomy.vocabulary.tags
@@ -12,6 +13,7 @@ dependencies:
     - contextual
     - field_ui
     - file
+    - filter
     - node
     - path
     - system
@@ -61,6 +63,7 @@ permissions:
   - 'revert all revisions'
   - 'revert article revisions'
   - 'revert page revisions'
+  - 'use text format full_html'
   - 'view all revisions'
   - 'view article revisions'
   - 'view own unpublished content'

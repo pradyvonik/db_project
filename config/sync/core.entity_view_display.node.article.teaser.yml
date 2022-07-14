@@ -9,12 +9,10 @@ dependencies:
     - field.field.node.article.field_category
     - field.field.node.article.field_editorial
     - field.field.node.article.field_heading_image
-    - field.field.node.article.field_posted_date
     - field.field.node.article.field_tags
     - image.style.thumbnail
     - node.type.article
   module:
-    - datetime
     - image
     - text
     - user
@@ -51,15 +49,6 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_posted_date:
-    type: datetime_custom
-    label: inline
-    settings:
-      timezone_override: ''
-      date_format: Y-m-d
-    third_party_settings: {  }
-    weight: 2
     region: content
   links:
     settings: {  }
