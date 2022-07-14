@@ -1,19 +1,19 @@
-uuid: ce387afd-0c87-400a-86b0-bed09443e93f
+uuid: a9a35089-806e-4f4a-a65e-ec6364ea98a2
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_ad_title
+    - field.storage.node.field_image_title
     - node.type.static_picture
   module:
     - text
-id: node.static_picture.field_ad_title
-field_name: field_ad_title
+id: node.static_picture.field_image_title
+field_name: field_image_title
 entity_type: node
 bundle: static_picture
-label: 'AD title'
+label: 'Image title'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

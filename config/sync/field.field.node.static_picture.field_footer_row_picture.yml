@@ -1,17 +1,17 @@
-uuid: d93d92ac-ec29-4df0-bfcf-0c77388cbcf5
+uuid: 707e6416-62c2-4065-8044-c3e333e94770
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_picture
+    - field.storage.node.field_footer_row_picture
     - node.type.static_picture
   module:
     - image
-id: node.static_picture.field_picture
-field_name: field_picture
+id: node.static_picture.field_footer_row_picture
+field_name: field_footer_row_picture
 entity_type: node
 bundle: static_picture
-label: Picture
+label: 'Footer row picture'
 description: ''
 required: false
 translatable: false
@@ -23,8 +23,8 @@ settings:
   file_directory: '[date:custom:Y]-[date:custom:m]'
   file_extensions: 'png gif jpg jpeg'
   max_filesize: ''
-  max_resolution: 970x350
-  min_resolution: 300x90
+  max_resolution: ''
+  min_resolution: ''
   alt_field: false
   alt_field_required: true
   title_field: false

@@ -4,21 +4,31 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.static_picture.field_ad_title
-    - field.field.node.static_picture.field_picture
+    - field.field.node.static_picture.field_footer_row_picture
+    - field.field.node.static_picture.field_image_title
+    - field.field.node.static_picture.field_static_picture_link
+    - image.style.large
     - node.type.static_picture
   module:
+    - image
     - user
 id: node.static_picture.teaser
 targetEntityType: node
 bundle: static_picture
 mode: teaser
 content:
-  links:
-    settings: {  }
+  field_footer_row_picture:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
-  field_ad_title: true
-  field_picture: true
+  field_image_title: true
+  field_static_picture_link: true
+  links: true

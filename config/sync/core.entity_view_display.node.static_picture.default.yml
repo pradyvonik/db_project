@@ -3,32 +3,41 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.static_picture.field_ad_title
-    - field.field.node.static_picture.field_picture
+    - field.field.node.static_picture.field_footer_row_picture
+    - field.field.node.static_picture.field_image_title
+    - field.field.node.static_picture.field_static_picture_link
     - node.type.static_picture
   module:
     - image
+    - text
     - user
 id: node.static_picture.default
 targetEntityType: node
 bundle: static_picture
 mode: default
 content:
-  field_picture:
+  field_footer_row_picture:
     type: image
-    label: hidden
+    label: above
     settings:
       image_link: ''
       image_style: ''
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
-  links:
+  field_image_title:
+    type: text_default
+    label: above
     settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
-  field_ad_title: true
+  field_static_picture_link: true
