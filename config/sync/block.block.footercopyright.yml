@@ -1,0 +1,25 @@
+uuid: 03e380de-c923-42b2-becb-9cdc2d8c1262
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:d1fc9075-d23a-4f0c-9624-8f3b0516d13a'
+  module:
+    - block_content
+  theme:
+    - olivero
+id: footercopyright
+theme: olivero
+region: footer_bottom
+weight: 0
+provider: null
+plugin: 'block_content:d1fc9075-d23a-4f0c-9624-8f3b0516d13a'
+settings:
+  id: 'block_content:d1fc9075-d23a-4f0c-9624-8f3b0516d13a'
+  label: 'Footer copyright'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
