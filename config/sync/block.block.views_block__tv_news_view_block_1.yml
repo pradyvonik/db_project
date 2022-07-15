@@ -1,0 +1,24 @@
+uuid: 67434148-458e-4e6a-9094-88cef40f2fca
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.tv_news_view
+  module:
+    - views
+  theme:
+    - olivero
+id: views_block__tv_news_view_block_1
+theme: olivero
+region: breadcrumb
+weight: -10
+provider: null
+plugin: 'views_block:tv_news_view-block_1'
+settings:
+  id: 'views_block:tv_news_view-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }
