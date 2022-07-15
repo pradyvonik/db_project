@@ -1,21 +1,21 @@
-uuid: f0f8a086-0148-4827-a8a1-474dbdc325b1
+uuid: 02d97e97-30a7-40ab-ae97-b5a0d14c99e1
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.fashion_news_view
+    - views.view.celebrities_news_view
   module:
     - views
   theme:
     - olivero
-id: views_block__fashion_news_view_block_1
+id: views_block__celebrities_news_view_block_1
 theme: olivero
 region: breadcrumb
-weight: -13
+weight: -10
 provider: null
-plugin: 'views_block:fashion_news_view-block_1'
+plugin: 'views_block:celebrities_news_view-block_1'
 settings:
-  id: 'views_block:fashion_news_view-block_1'
+  id: 'views_block:celebrities_news_view-block_1'
   label: ''
   label_display: visible
   provider: views

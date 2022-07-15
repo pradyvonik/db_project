@@ -11,7 +11,7 @@ dependencies:
 id: views_block__featured_block_view_block_1
 theme: olivero
 region: breadcrumb
-weight: -13
+weight: -12
 provider: null
 plugin: 'views_block:featured_block_view-block_1'
 settings:
