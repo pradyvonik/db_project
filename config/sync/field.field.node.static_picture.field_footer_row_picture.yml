@@ -11,7 +11,7 @@ id: node.static_picture.field_footer_row_picture
 field_name: field_footer_row_picture
 entity_type: node
 bundle: static_picture
-label: 'Footer row picture'
+label: 'Static picture'
 description: ''
 required: false
 translatable: false
