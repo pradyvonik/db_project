@@ -11,7 +11,7 @@ dependencies:
 id: views_block__fashion_news_view_block_1
 theme: olivero
 region: breadcrumb
-weight: 0
+weight: -12
 provider: null
 plugin: 'views_block:fashion_news_view-block_1'
 settings:
