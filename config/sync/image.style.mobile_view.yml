@@ -1,0 +1,15 @@
+uuid: b00d1df5-e0a1-4a67-94fc-c37bc6280341
+langcode: en
+status: true
+dependencies: {  }
+name: mobile_view
+label: 'Mobile view (768x768)'
+effects:
+  2bd1ee0c-c608-43fc-b201-299b2f4f9d8e:
+    uuid: 2bd1ee0c-c608-43fc-b201-299b2f4f9d8e
+    id: image_scale
+    weight: 1
+    data:
+      width: 768
+      height: 768
+      upscale: false
