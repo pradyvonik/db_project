@@ -1,21 +1,21 @@
-uuid: 55b11f96-855c-48fd-b89f-1b1b95be9cce
+uuid: 7920751e-7d8c-422b-9d99-3b3917a08caa
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.stay_connected_view
+    - views.view.food_drink_news_view
   module:
     - views
   theme:
     - olivero
-id: views_block__stay_connected_view_block_1
+id: views_block__food_drink_news_view_block_1
 theme: olivero
 region: breadcrumb
-weight: -11
+weight: -9
 provider: null
-plugin: 'views_block:stay_connected_view-block_1'
+plugin: 'views_block:food_drink_news_view-block_1'
 settings:
-  id: 'views_block:stay_connected_view-block_1'
+  id: 'views_block:food_drink_news_view-block_1'
   label: ''
   label_display: visible
   provider: views
