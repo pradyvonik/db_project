@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'Editor''s category'
 vid: editor_s_category
-description: 'Make proposals for users to read'
+description: 'Make proposals which articles users should to read'
 weight: 0
