@@ -1,21 +1,21 @@
-uuid: 69ed9e17-ceed-4ab9-8820-77bedbb10fbf
+uuid: 0435a63d-b0c4-4f8b-a1e3-430e422f9a0c
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.footer_editor_picks
+    - views.view.big_ad_view
   module:
     - views
   theme:
     - olivero
-id: views_block__footer_editor_picks_block_1_2
+id: views_block__big_ad_view_block_1
 theme: olivero
 region: content_below
-weight: -14
+weight: -15
 provider: null
-plugin: 'views_block:footer_editor_picks-block_1'
+plugin: 'views_block:big_ad_view-block_1'
 settings:
-  id: 'views_block:footer_editor_picks-block_1'
+  id: 'views_block:big_ad_view-block_1'
   label: ''
   label_display: visible
   provider: views
