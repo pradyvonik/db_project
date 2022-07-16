@@ -1,0 +1,24 @@
+uuid: 02d97e97-30a7-40ab-ae97-b5a0d14c99e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.celebrities_news_view
+  module:
+    - views
+  theme:
+    - olivero
+id: views_block__celebrities_news_view_block_1
+theme: olivero
+region: breadcrumb
+weight: -10
+provider: null
+plugin: 'views_block:celebrities_news_view-block_1'
+settings:
+  id: 'views_block:celebrities_news_view-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }
