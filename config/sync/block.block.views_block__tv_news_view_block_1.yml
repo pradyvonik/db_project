@@ -1,6 +1,6 @@
 uuid: 67434148-458e-4e6a-9094-88cef40f2fca
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.tv_news_view

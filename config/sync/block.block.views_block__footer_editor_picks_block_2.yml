@@ -17,7 +17,7 @@ plugin: 'views_block:footer_editor_picks-block_2'
 settings:
   id: 'views_block:footer_editor_picks-block_2'
   label: ''
-  label_display: visible
+  label_display: '0'
   provider: views
   views_label: ''
   items_per_page: none

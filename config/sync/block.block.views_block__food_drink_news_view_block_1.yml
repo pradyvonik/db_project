@@ -1,6 +1,6 @@
 uuid: 7920751e-7d8c-422b-9d99-3b3917a08caa
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.food_drink_news_view

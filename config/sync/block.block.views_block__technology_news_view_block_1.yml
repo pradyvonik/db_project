@@ -1,6 +1,6 @@
 uuid: c20f75a8-12b6-4f72-ba3f-63462823e22a
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.technology_news_view
