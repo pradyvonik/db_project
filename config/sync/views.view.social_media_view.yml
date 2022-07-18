@@ -285,7 +285,12 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      header: {  }
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          plugin_id: text_custom
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -322,7 +327,21 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      defaults:
+        header: false
       display_description: ''
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: 'Follow Us'
+          tokenize: false
       display_extenders: {  }
     cache_metadata:
       max-age: -1

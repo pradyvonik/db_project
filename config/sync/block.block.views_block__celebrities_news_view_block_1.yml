@@ -1,6 +1,6 @@
 uuid: 02d97e97-30a7-40ab-ae97-b5a0d14c99e1
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.celebrities_news_view

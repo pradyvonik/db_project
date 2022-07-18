@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.static_picture.field_ad
     - field.field.node.static_picture.field_footer_row_picture
     - field.field.node.static_picture.field_image_title
     - field.field.node.static_picture.field_static_picture_link
@@ -29,6 +30,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_ad: true
   field_image_title: true
   field_static_picture_link: true
   links: true

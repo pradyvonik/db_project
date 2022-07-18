@@ -1,0 +1,23 @@
+uuid: 6556e2e5-0504-45fa-a936-b2eba64dc1ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ad
+    - node.type.static_picture
+id: node.static_picture.field_ad
+field_name: field_ad
+entity_type: node
+bundle: static_picture
+label: AD
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
