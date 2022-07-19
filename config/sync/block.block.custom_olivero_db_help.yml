@@ -11,7 +11,7 @@ _core:
 id: custom_olivero_db_help
 theme: custom_olivero_db
 region: header
-weight: 0
+weight: -8
 provider: null
 plugin: help_block
 settings:

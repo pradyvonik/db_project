@@ -1,6 +1,6 @@
 uuid: c1386fd0-0a89-4beb-8b65-cce610292079
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.footer_editor_picks
@@ -10,8 +10,8 @@ dependencies:
     - custom_olivero_db
 id: custom_olivero_db_views_block__footer_editor_picks_block_2
 theme: custom_olivero_db
-region: footer
-weight: -13
+region: header
+weight: -14
 provider: null
 plugin: 'views_block:footer_editor_picks-block_2'
 settings:

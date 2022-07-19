@@ -11,7 +11,7 @@ _core:
 id: custom_olivero_db_syndicate
 theme: custom_olivero_db
 region: header
-weight: 0
+weight: -6
 provider: null
 plugin: node_syndicate_block
 settings:

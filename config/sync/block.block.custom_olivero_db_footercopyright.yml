@@ -1,6 +1,6 @@
 uuid: cbef8e37-084d-477f-9d3a-af80a0365e73
 langcode: en
-status: true
+status: false
 dependencies:
   content:
     - 'block_content:basic:d1fc9075-d23a-4f0c-9624-8f3b0516d13a'
@@ -10,8 +10,8 @@ dependencies:
     - custom_olivero_db
 id: custom_olivero_db_footercopyright
 theme: custom_olivero_db
-region: footer
-weight: -16
+region: header
+weight: -17
 provider: null
 plugin: 'block_content:d1fc9075-d23a-4f0c-9624-8f3b0516d13a'
 settings:
