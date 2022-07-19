@@ -1,0 +1,24 @@
+uuid: dc96299e-70ab-422e-a4b8-f3529c9c9e03
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.top_news_view
+  module:
+    - views
+  theme:
+    - custom_olivero_db
+id: custom_olivero_db_views_block__top_news_view_block_1
+theme: custom_olivero_db
+region: header
+weight: 0
+provider: null
+plugin: 'views_block:top_news_view-block_1'
+settings:
+  id: 'views_block:top_news_view-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

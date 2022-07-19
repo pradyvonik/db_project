@@ -1,0 +1,25 @@
+uuid: c61c2da1-5571-4931-9053-d7a6142993fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - custom_olivero_db
+id: custom_olivero_db_footer
+theme: custom_olivero_db
+region: footer
+weight: -15
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

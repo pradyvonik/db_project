@@ -1,0 +1,22 @@
+uuid: f52ad0d9-7cff-4e14-a063-74d679d49338
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - custom_olivero_db
+_core:
+  default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
+id: custom_olivero_db_messages
+theme: custom_olivero_db
+region: header
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }
