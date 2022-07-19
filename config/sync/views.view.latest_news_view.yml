@@ -1547,7 +1547,20 @@ display:
           field_api_classes: false
       defaults:
         fields: false
+        header: false
       display_description: ''
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: 'Latest news'
+          tokenize: false
       display_extenders: {  }
     cache_metadata:
       max-age: -1
