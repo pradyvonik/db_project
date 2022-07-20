@@ -1,0 +1,25 @@
+uuid: 7a992ca9-09fe-4ad7-ab79-96b846e580af
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:303edfd4-ccbd-4cc9-bfb5-e703f132aafe'
+  module:
+    - block_content
+  theme:
+    - custom_olivero_db
+id: custom_olivero_db_footersiteinfo
+theme: custom_olivero_db
+region: header
+weight: -12
+provider: null
+plugin: 'block_content:303edfd4-ccbd-4cc9-bfb5-e703f132aafe'
+settings:
+  id: 'block_content:303edfd4-ccbd-4cc9-bfb5-e703f132aafe'
+  label: 'Footer site info'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
