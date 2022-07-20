@@ -1,0 +1,21 @@
+uuid: d15d9384-0ba2-4290-8a18-94d390ddb684
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - custom_olivero_db
+id: custom_olivero_db_searchform
+theme: custom_olivero_db
+region: primary_menu
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form'
+  label_display: visible
+  provider: search
+  page_id: ''
+visibility: {  }

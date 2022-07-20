@@ -24,3 +24,5 @@
 # Ignore .env files as they are personal
 /.env
 /*.sql
+/web/themes/*/node_modules
+/web/themes/*/dist
