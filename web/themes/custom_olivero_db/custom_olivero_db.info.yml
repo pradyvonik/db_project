@@ -13,7 +13,7 @@ regions:
   left_sidebar: 'Left Sidebar'
   highlights: 'Highlights'
   content_main: 'Main Content'
-  sidebar: 'Right Sidebar'
+  right_sidebar: 'Right Sidebar'
   content_down: 'Content Down'
   footer_up: 'Footer Up'
   footer_down: 'Footer Down'

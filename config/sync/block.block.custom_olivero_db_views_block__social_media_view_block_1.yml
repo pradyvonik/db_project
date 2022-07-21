@@ -1,6 +1,6 @@
 uuid: 5642f910-8437-4717-a66d-88e68ac29d95
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - views.view.social_media_view

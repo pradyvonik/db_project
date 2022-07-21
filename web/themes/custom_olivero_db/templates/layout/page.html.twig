@@ -42,93 +42,97 @@
  */
 #}
 
-<div id="page-wrapper" class="page-wrapper">
-  <div id="page">
+<div id="wrapper-page" class="wrapper-page">
 
-    {% if page.header %}
-      <header class="header">
-        <div class="container">
-          <div class="header__inner">
-            {{ page.header }}
+  {% if page.header %}
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          {{ page.header }}
+        </div>
+      </div>
+    </header>
+  {% endif %}
+
+  {# * page content wrapper #}
+  <div class="wrapper">
+    <div class="main__inner">
+      <main class="main">
+
+        {# top block #}
+        {% if page.content_top %}
+          <div class="wrapper-content-top">
+            <div class="container">
+              <div class="content-top_main">
+                {{ page.content_top }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        {# main content #}
+        <div class="wrapper-content">
+          <div class="container">
+            <div class="content-inner">
+              {% if page.left_sidebar %}
+              <div class="content__item-left">
+                {{ page.left_sidebar }}
+              </div>
+              <div class="content__item-main">
+                {% if page.highlights %}
+                  <div class="content__item-top">
+                    {{ page.highlights }}
+                  </div>
+                {% endif %}
+                <div class="content__item-bottom">
+                  <div class="content__item-bottom-center">
+                    {{ page.content_main }}
+                  </div>
+                  <div class="content__item-bottom-right">
+                    {{ page.right_sidebar }}
+                  </div>
+                </div>
+              </div>
+              {% else %}
+              <div class="content__item-main">
+                {% if page.highlights %}
+                  <div class="content__item-top">
+                    {{ page.highlights }}
+                  </div>
+                {% endif %}
+                <div class="content__item-bottom">
+                  <div class="content__item-bottom-center">
+                    {{ page.content_main }}
+                  </div>
+                  <div class="content__item-bottom-right">
+                    {{ page.right_sidebar }}
+                  </div>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="content__item-down">
+              <div class="container">
+                <div class="wrapper-down">
+                  {{ page.content_down }}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </header>
-    {% endif %}
-
-    {# * page content wrapper #}
-    <div class="wrapper">
-      <div class="main__inner">
-        <main class="main">
-
-          {# top block #}
-          {% if page.content_top %}
-            <section class="section-content_top">
-              <div class="container">
-                <div class="section-content_top">
-                  {{ page.content_top }}
-                </div>
-              </div>
-            </section>
-          {% endif %}
-
-          {# main content #}
-          <div class="wrapper-content">
-            <div class="container">
-              <div class="content-inner">
-                {% if page.left_sidebar %}
-                <div class="content__item-left">
-                  {{ page.left_sidebar }}
-                </div>
-                <div class="content__item-main">
-                  {% if page.highlights %}
-                    <div class="content__item-top">
-                      {{ page.highlights }}
-                    </div>
-                  {% endif %}
-                  <div class="content__item-bottom">
-                    <div class="content__item-bottom-center">
-                      {{ page.content_main }}
-                    </div>
-                    <div class="content__item-bottom-right">
-                      {{ page.sidebar }}
-                    </div>
-                  </div>
-                </div>
-                {% else %}
-                <div class="content__item-main">
-                  {% if page.highlights %}
-                    <div class="content__item-top">
-                      {{ page.highlights }}
-                    </div>
-                  {% endif %}
-                  <div class="content__item-bottom">
-                    <div class="content__item-bottom-center">
-                      {{ page.content_main }}
-                    </div>
-                    <div class="content__item-bottom-right">
-                      {{ page.sidebar }}
-                    </div>
-                  </div>
-                  {% endif %}
-                </div>
-              </div>
-            </div>
-            <div class="content__item-below">
-              {{ page.content_down }}
-            </div>
-          </div>
-        </main>
-      </div>
-
+      </main>
     </div>
 
-    <footer class="site-footer">
-      <div class="site-footer__inner container">
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
         {{ page.footer_up }}
         {{ page.footer_down }}
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <div class="overlay" data-drupal-selector="overlay"></div>
-  </div>
 </div>

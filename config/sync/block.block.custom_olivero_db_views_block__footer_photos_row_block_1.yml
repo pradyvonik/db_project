@@ -10,8 +10,8 @@ dependencies:
     - custom_olivero_db
 id: custom_olivero_db_views_block__footer_photos_row_block_1
 theme: custom_olivero_db
-region: header
-weight: -10
+region: footer_down
+weight: -17
 provider: null
 plugin: 'views_block:footer_photos_row-block_1'
 settings:
