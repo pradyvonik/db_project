@@ -1,0 +1,40 @@
+
+.header{
+
+  .block-region.demo-block{
+    width: 100%;
+  }
+}
+
+div.wrapper > main > section.breadcrumb > div > div{
+  display: flex;
+}
+
+.inner__box{
+  width: 100%;
+  display: flex;
+  gap:40px;
+  .content__inner{
+    max-width: 744px;
+    width: 100%;
+    flex-shrink: 0;
+
+  }
+  .block-one__inner{
+    width: 100%;
+  }
+}
+.footer{
+  border:none;
+  &__inner{
+    width: 100%;
+  }
+  div > div > div.footer__box-2 > div,
+  div > div > div.footer__box-1 > div {
+    display: flex;
+  }
+  .region.region--breadcrumb.grid-full.layout--pass--content-medium.ie11-autorow{
+    display: flex;
+  }
+
+}
