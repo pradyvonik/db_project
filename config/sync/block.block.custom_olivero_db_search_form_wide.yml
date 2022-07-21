@@ -10,7 +10,7 @@ _core:
   default_config_hash: imMyHD6LYci0gtXq56qr9ZKGHzbEG9uFydrN5EhKtSU
 id: custom_olivero_db_search_form_wide
 theme: custom_olivero_db
-region: secondary_menu
+region: header
 weight: -5
 provider: null
 plugin: search_form_block

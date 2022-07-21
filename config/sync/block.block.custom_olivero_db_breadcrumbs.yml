@@ -10,7 +10,7 @@ _core:
   default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
 id: custom_olivero_db_breadcrumbs
 theme: custom_olivero_db
-region: breadcrumb
+region: header
 weight: -14
 provider: null
 plugin: system_breadcrumb_block

@@ -1,6 +1,6 @@
 uuid: 90ac7b6a-605b-4d4c-9a06-83a8de54d85e
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - views.view.footer_photos_row
