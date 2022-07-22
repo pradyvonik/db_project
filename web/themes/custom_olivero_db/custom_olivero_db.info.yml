@@ -1,0 +1,20 @@
+name: custom olivero db
+type: theme
+base theme: olivero
+description: A flexible theme with a responsive, mobile-first layout.
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9
+libraries:
+  - custom_olivero_db/global
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  content_top: 'Content top'
+  left_sidebar: 'Left Sidebar'
+  highlights: 'Highlights'
+  content_main: 'Main Content'
+  right_sidebar: 'Right Sidebar'
+  content_down: 'Content Down'
+  footer_up: 'Footer Up'
+  footer_down: 'Footer Down'

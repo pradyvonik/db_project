@@ -10,7 +10,7 @@ dependencies:
     - custom_olivero_db
 id: custom_olivero_db_views_block__food_drink_news_view_block_1
 theme: custom_olivero_db
-region: breadcrumb
+region: header
 weight: -9
 provider: null
 plugin: 'views_block:food_drink_news_view-block_1'

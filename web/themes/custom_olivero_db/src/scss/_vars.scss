@@ -1,0 +1,22 @@
+$grey: #9b9b9b;
+$blue: #3c6b97;
+$grey97: #f7f7f7;
+
+
+//@mixin OpenSans-300 {
+//  font-family: 'OpenSans',
+//    sans-serif;
+//  font-weight: 300;
+//}
+
+
+
+
+
+
+@mixin _1660 {
+  @media (max-width: 1660px) {
+    @content;
+  }
+}
+

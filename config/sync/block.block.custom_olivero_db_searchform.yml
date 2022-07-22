@@ -8,7 +8,7 @@ dependencies:
     - custom_olivero_db
 id: custom_olivero_db_searchform
 theme: custom_olivero_db
-region: primary_menu
+region: header
 weight: 0
 provider: null
 plugin: search_form_block
