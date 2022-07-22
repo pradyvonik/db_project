@@ -44,25 +44,28 @@
 
 <div id="wrapper-page" class="wrapper-page">
 
-  {% if page.header %}
-    <header class="header">
-      <div class="container">
-        <div class="header__inner">
-          {{ page.header }}
+  <header class="header-region">
+    <div class="container-big">
+      <div class="header-box">
+        <div class="container">
+          <div class="header__inner">
+            {{ page.primary_menu }}
+            {{ page.header }}
+          </div>
         </div>
       </div>
-    </header>
-  {% endif %}
+    </div>
+  </header>
 
   {# * page content wrapper #}
   <div class="wrapper">
     <div class="main__inner">
-      <main class="main">
+      <main class="main-region">
 
         {# top block #}
         {% if page.content_top %}
           <div class="wrapper-content-top">
-            <div class="container">
+            <div class="container-big">
               <div class="content-top_main">
                 {{ page.content_top }}
               </div>
@@ -126,11 +129,13 @@
 
   </div>
 
-  <footer class="footer">
+  <footer class="footer-region">
     <div class="container">
       <div class="footer__inner">
         {{ page.footer_up }}
-        {{ page.footer_down }}
+        <div class="container-big">
+          {{ page.footer_down }}
+        </div>
       </div>
     </div>
   </footer>

@@ -9,6 +9,7 @@ libraries:
   - custom_olivero_db/global
 regions:
   header: Header
+  primary_menu: 'Primary menu'
   content_top: 'Content top'
   left_sidebar: 'Left Sidebar'
   highlights: 'Highlights'
