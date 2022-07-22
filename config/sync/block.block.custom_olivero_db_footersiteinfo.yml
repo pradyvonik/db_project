@@ -11,7 +11,7 @@ dependencies:
 id: custom_olivero_db_footersiteinfo
 theme: custom_olivero_db
 region: header
-weight: -12
+weight: -3
 provider: null
 plugin: 'block_content:303edfd4-ccbd-4cc9-bfb5-e703f132aafe'
 settings:

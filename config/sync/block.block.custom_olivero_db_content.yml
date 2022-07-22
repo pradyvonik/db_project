@@ -1,6 +1,6 @@
 uuid: 1cbb380c-3e86-42c4-a6f2-6e7d80d01150
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
@@ -10,8 +10,8 @@ _core:
   default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
 id: custom_olivero_db_content
 theme: custom_olivero_db
-region: header
-weight: 0
+region: content_main
+weight: -16
 provider: null
 plugin: system_main_block
 settings:

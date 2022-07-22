@@ -11,7 +11,7 @@ dependencies:
 id: custom_olivero_db_views_block__social_media_view_block_2
 theme: custom_olivero_db
 region: header
-weight: -11
+weight: -1
 provider: null
 plugin: 'views_block:social_media_view-block_2'
 settings:
