@@ -11,7 +11,7 @@ dependencies:
 id: custom_olivero_db_views_block__technology_news_view_block_1
 theme: custom_olivero_db
 region: header
-weight: 3
+weight: 4
 provider: null
 plugin: 'views_block:technology_news_view-block_1'
 settings:

@@ -11,7 +11,7 @@ dependencies:
 id: custom_olivero_db_views_block__featured_block_view_block_1
 theme: custom_olivero_db
 region: header
-weight: -4
+weight: -3
 provider: null
 plugin: 'views_block:featured_block_view-block_1'
 settings:

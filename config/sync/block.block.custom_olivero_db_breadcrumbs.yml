@@ -11,7 +11,7 @@ _core:
 id: custom_olivero_db_breadcrumbs
 theme: custom_olivero_db
 region: header
-weight: -9
+weight: -8
 provider: null
 plugin: system_breadcrumb_block
 settings:

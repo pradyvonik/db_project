@@ -1,6 +1,6 @@
 uuid: 62fd9648-cabb-42d6-b0c0-fa01e192af79
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.fashion_news_view

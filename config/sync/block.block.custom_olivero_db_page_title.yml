@@ -9,7 +9,7 @@ _core:
 id: custom_olivero_db_page_title
 theme: custom_olivero_db
 region: header
-weight: -6
+weight: -5
 provider: null
 plugin: page_title_block
 settings:

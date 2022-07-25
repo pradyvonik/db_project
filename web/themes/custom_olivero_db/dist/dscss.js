@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_libs_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/_libs.scss */ \"./src/scss/_libs.scss\");\n/* harmony import */ var _scss_libs_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_libs_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _scss_regions_regions_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scss/regions/_regions.scss */ \"./src/scss/regions/_regions.scss\");\n/* harmony import */ var _scss_regions_regions_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scss_regions_regions_scss__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _scss_header_header_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scss/header/_header.scss */ \"./src/scss/header/_header.scss\");\n/* harmony import */ var _scss_header_header_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scss_header_header_scss__WEBPACK_IMPORTED_MODULE_2__);\n!(function webpackMissingModule() { var e = new Error(\"Cannot find module './scss/header/_menu.scss'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n!(function webpackMissingModule() { var e = new Error(\"Cannot find module './scss/header/_search.scss'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scss/main.scss */ \"./src/scss/main.scss\");\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_scss_main_scss__WEBPACK_IMPORTED_MODULE_4__);\n/*\nscss\n */\n\n\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_libs_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/_libs.scss */ \"./src/scss/_libs.scss\");\n/* harmony import */ var _scss_libs_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_libs_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _scss_regions_regions_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scss/regions/_regions.scss */ \"./src/scss/regions/_regions.scss\");\n/* harmony import */ var _scss_regions_regions_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scss_regions_regions_scss__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _scss_header_header_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scss/header/_header.scss */ \"./src/scss/header/_header.scss\");\n/* harmony import */ var _scss_header_header_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scss_header_header_scss__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _scss_header_menu_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scss/header/_menu.scss */ \"./src/scss/header/_menu.scss\");\n/* harmony import */ var _scss_header_menu_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_scss_header_menu_scss__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _scss_header_search_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scss/header/_search.scss */ \"./src/scss/header/_search.scss\");\n/* harmony import */ var _scss_header_search_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_scss_header_search_scss__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./scss/main.scss */ \"./src/scss/main.scss\");\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_scss_main_scss__WEBPACK_IMPORTED_MODULE_5__);\n/*\nscss\n */\n\n\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -114,9 +114,31 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/
   !*** ./src/scss/header/_header.scss ***!
   \**************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("throw new Error(\"Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\\nModuleParseError: Module parse failed: Unexpected character '�' (1:0)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n(Source code omitted for this binary file)\\n    at handleParseError (/home/paul/db-project/web/themes/custom_olivero_db/node_modules/webpack/lib/NormalModule.js:469:19)\\n    at doBuild.err (/home/paul/db-project/web/themes/custom_olivero_db/node_modules/webpack/lib/NormalModule.js:503:5)\\n    at runLoaders (/home/paul/db-project/web/themes/custom_olivero_db/node_modules/webpack/lib/NormalModule.js:358:12)\\n    at /home/paul/db-project/web/themes/custom_olivero_db/node_modules/loader-runner/lib/LoaderRunner.js:373:3\\n    at iterateNormalLoaders (/home/paul/db-project/web/themes/custom_olivero_db/node_modules/loader-runner/lib/LoaderRunner.js:214:10)\\n    at Array.<anonymous> (/home/paul/db-project/web/themes/custom_olivero_db/node_modules/loader-runner/lib/LoaderRunner.js:205:4)\\n    at Storage.finished (/home/paul/db-project/web/themes/custom_olivero_db/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:55:16)\\n    at provider (/home/paul/db-project/web/themes/custom_olivero_db/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:91:9)\\n    at /home/paul/db-project/web/themes/custom_olivero_db/node_modules/graceful-fs/graceful-fs.js:123:16\\n    at FSReqWrap.readFileAfterClose [as oncomplete] (internal/fs/read_file_context.js:53:3)\");\n\n//# sourceURL=webpack:///./src/scss/header/_header.scss?");
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/scss/header/_header.scss?");
+
+/***/ }),
+
+/***/ "./src/scss/header/_menu.scss":
+/*!************************************!*\
+  !*** ./src/scss/header/_menu.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/scss/header/_menu.scss?");
+
+/***/ }),
+
+/***/ "./src/scss/header/_search.scss":
+/*!**************************************!*\
+  !*** ./src/scss/header/_search.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/scss/header/_search.scss?");
 
 /***/ }),
 
