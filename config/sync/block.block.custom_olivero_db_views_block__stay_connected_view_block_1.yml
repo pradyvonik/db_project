@@ -1,6 +1,6 @@
 uuid: f5dad2cb-8c2a-43f0-9174-e6fe885cbdb3
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.stay_connected_view

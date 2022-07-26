@@ -11,7 +11,7 @@ dependencies:
 id: custom_olivero_db_views_block__footer_editor_picks_block_1_2
 theme: custom_olivero_db
 region: header
-weight: -15
+weight: -10
 provider: null
 plugin: 'views_block:footer_editor_picks-block_1'
 settings:

@@ -10,8 +10,8 @@ _core:
   default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
 id: custom_olivero_db_content
 theme: custom_olivero_db
-region: header
-weight: 0
+region: content_main
+weight: -16
 provider: null
 plugin: system_main_block
 settings:

@@ -165,7 +165,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 5
+          items_per_page: 3
       exposed_form:
         type: basic
         options:
@@ -285,12 +285,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      header:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          plugin_id: text_custom
+      header: {  }
       footer: {  }
       display_extenders: {  }
     cache_metadata:

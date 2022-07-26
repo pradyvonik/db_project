@@ -1,6 +1,6 @@
 uuid: 4304aee4-d114-49a7-b845-13dfab35dd5a
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.big_ad_view

@@ -1,11 +1,20 @@
-.container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 15px;
-  position: relative;
-}
+@import "vars";
+@import "fonts";
+@import "mixin";
 
-header {
-  background-color: gray;
-}
+html,
+body{
+  background-image: none;
+  background-color: #FFFFFF;
+  //background-color: black;
 
+}
+.header {
+  >.container {
+    max-width: 1164px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+}

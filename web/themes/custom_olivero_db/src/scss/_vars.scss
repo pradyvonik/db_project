@@ -1,6 +1,8 @@
-$grey: #9b9b9b;
-$blue: #3c6b97;
-$grey97: #f7f7f7;
+$yellow: #fcb900;
+$orange: #f5b000;
+$breakpoints: (
+  'desktop': 768px,
+) !default;
 
 
 //@mixin OpenSans-300 {
@@ -8,15 +10,4 @@ $grey97: #f7f7f7;
 //    sans-serif;
 //  font-weight: 300;
 //}
-
-
-
-
-
-
-@mixin _1660 {
-  @media (max-width: 1660px) {
-    @content;
-  }
-}
 
