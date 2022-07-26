@@ -5,7 +5,7 @@ features:
   favicon: 1
 logo:
   use_default: 0
-  path: 'public://Screenshot.png'
+  path: 'public://logo_1.png'
 favicon:
   use_default: 1
 mobile_menu_all_widths: 0

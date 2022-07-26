@@ -1,6 +1,8 @@
-$white: #ffffff;
-$green: #00a392;
-$breackpoint_md: 768px;
+$yellow: #fcb900;
+$orange: #f5b000;
+$breakpoints: (
+  'desktop': 768px,
+) !default;
 
 
 //@mixin OpenSans-300 {

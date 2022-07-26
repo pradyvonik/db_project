@@ -1,15 +1,65 @@
 @import "../global";
 
 .header-region {
-  //background-image: url("../../img/header.jpg");
-  background-color: $green;
-  z-index: -1;
-  @include _breackpoint_md {
+  background-image: url("../../img/header.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    opacity: 0.6;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .site-branding {
+    background-image: none;
+    min-height: 35px;
+    align-items: center;
+  }
+
+  @include bp-up('desktop') {
     display: flex;
 
     .primary-nav__menu {
       max-width: 560px;
+
+      .primary-nav__menu-link {
+        color: white;
+      }
+
+      .primary-nav__menu-link:hover {
+        color: $yellow;
+      }
+
+      .primary-nav__menu-link.is-active{
+        color: $orange;
+      }
+
+      .primary-nav__menu-link-inner::after {
+        border-top: none;
+      }
+
+      .primary-nav__menu--level-2 {
+        border-top: none;
+      }
+
+      .primary-nav__menu-link-inner--level-2 {
+        color: black;
+        &:hover {
+          color: $yellow;
+        }
+      }
     }
+
     .header__inner {
       align-items: center;
     }
@@ -29,7 +79,6 @@
       height: 30px;
       flex-wrap: nowrap;
     }
-
 
     .field-content {
       width: 20px;
@@ -59,10 +108,5 @@
   //  }
   //}
 
-  //@media (max-width: 768px) {
-  //  .header-region .header__inner {
-  //    flex-wrap: wrap;
-  //  }
-  //}
 }
 
