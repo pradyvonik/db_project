@@ -24,6 +24,8 @@
     background-image: none;
     min-height: 35px;
     align-items: center;
+    font-family: "Merriweather", serif;
+    font-weight: 700;
   }
 
   @include bp-up('desktop') {
@@ -31,9 +33,12 @@
 
     .primary-nav__menu {
       max-width: 560px;
+      font-family: "Fira Sans", sans-serif;
+      font-weight: 400;
 
       .primary-nav__menu-link {
         color: white;
+        font-weight: unset;
       }
 
       .primary-nav__menu-link:hover {
