@@ -4,6 +4,11 @@
   max-width: 1440px;
   margin: 0 auto;
 
+  .content__item-left {
+    width: 100%;
+    height: auto;
+  }
+
   .content-inner {
     display: block;
 
@@ -13,17 +18,32 @@
     }
 
     .content__item-left {
-      width: 100%;
-      height: auto;
+
+      @include bp-up('desktop') {
+        max-width: 308px;
+        min-width: 168px;
+      }
+
+      .view-latest-news-view {
+        overflow: visible;
+
+        .view-content {
+          margin-bottom: unset;
+        }
+      }
 
       a {
         text-decoration: none;
         color: black;
       }
+      .views-field-field-heading-image .field-content {
+        margin-left: -1.125rem;
+        margin-right: -1.125rem;
 
-      img {
-        padding-left: -1.125rem;
-        padding-right: -1.125rem;
+        @include bp-up('desktop') {
+          margin-left: unset;
+          margin-right: unset;
+        }
       }
 
       .view-header {
@@ -35,12 +55,21 @@
       }
 
       .views-row {
+        border-bottom: 1px solid $bluish-gray;
+
+        &:last-child {
+          border-bottom: unset;
+        }
+
         .views-field-created {
           font-family: "Fira Sans", sans-serif;
           font-weight: 400;
           color: $yellow;
+          font-size: 12px;
+
           a {
             text-transform: uppercase;
+            margin-right: 1rem;
           }
         }
 
@@ -49,50 +78,51 @@
           font-weight: 900;
         }
 
-        .views-field-body p{
-          font-family: "Merriweather", serif;
-          font-weight: 300;
-          margin: 0;
-          display:inline;
+        .views-field-body {
+
+
+          p {
+            font-family: "Merriweather", serif;
+            font-weight: 300;
+            margin: 0;
+            display: inline;
+
+          }
         }
-      }
 
-      .views-row:hover {
-        .views-field-title .field-content {
-          box-shadow: inset 0 -1px 0 0 $yellow;
+        .views-row:hover {
+          .views-field-title .field-content {
+            box-shadow: inset 0 -1px 0 0 $yellow;
+          }
         }
-      }
 
-      @include bp-up('desktop') {
-        max-width: 308px;
-      }
-
-      .content__item-main {
-        width: 100%;
-        height: auto;
-      }
-
-      .content__item-bottom {
-        display: flex;
-        width: 100%;
-        gap: 20px;
-
-        .content__item-bottom-center {
-          max-width: 584px;
+        .content__item-main {
           width: 100%;
           height: auto;
         }
 
-        .content__item-bottom-right {
-          max-width: 340px;
+        .content__item-bottom {
+          display: flex;
           width: 100%;
-          height: auto;
-        }
-      }
+          gap: 20px;
 
-      .content__item-down {
-        max-width: 1440px;
-        width: 100%;
+          .content__item-bottom-center {
+            max-width: 584px;
+            width: 100%;
+            height: auto;
+          }
+
+          .content__item-bottom-right {
+            max-width: 340px;
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        .content__item-down {
+          max-width: 1440px;
+          width: 100%;
+        }
       }
     }
   }
