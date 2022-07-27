@@ -1,4 +1,4 @@
-@import "../global";
+@import "..";
 
 .wrapper-content {
   max-width: 1440px;
@@ -22,6 +22,7 @@
       @include bp-up('desktop') {
         max-width: 308px;
         min-width: 168px;
+
       }
 
       .view-latest-news-view {
@@ -32,10 +33,6 @@
         }
       }
 
-      a {
-        text-decoration: none;
-        color: black;
-      }
       .views-field-field-heading-image .field-content {
         margin-left: -1.125rem;
         margin-right: -1.125rem;
@@ -62,11 +59,7 @@
         }
 
         .views-field-created {
-          font-family: "Fira Sans", sans-serif;
-          font-weight: 400;
           color: $yellow;
-          font-size: 12px;
-
           a {
             text-transform: uppercase;
             margin-right: 1rem;
@@ -80,21 +73,19 @@
 
         .views-field-body {
 
-
           p {
             font-family: "Merriweather", serif;
             font-weight: 300;
             margin: 0;
             display: inline;
-
           }
         }
 
-        .views-row:hover {
-          .views-field-title .field-content {
-            box-shadow: inset 0 -1px 0 0 $yellow;
-          }
-        }
+        //.views-row:hover {
+        //  .views-field-title .field-content {
+        //    box-shadow: inset 0 -1px 0 0 $yellow;
+        //  }
+        //}
 
         .content__item-main {
           width: 100%;

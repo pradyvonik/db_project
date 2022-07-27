@@ -1,4 +1,4 @@
-@import "../global";
+@import "..";
 
 .header-region {
   background-image: url("../../img/header.jpg");
@@ -26,7 +26,7 @@
     align-items: center;
     font-family: "Merriweather", serif;
     font-weight: 700;
-    
+
     .site-branding__logo img {
       background: url('../../img/logo.svg')
       no-repeat;

@@ -1,3 +1,60 @@
+@import "index";
+
+a {
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.views-row {
+
+  .views-field-field-category {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+
+  .views-field-created {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 400;
+    color: $gray;
+    font-size: 12px;
+  }
+
+  .views-field-title {
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+  }
+
+  .views-field-body {
+    p {
+      font-family: "Merriweather", serif;
+      font-weight: 300;
+      margin: 0;
+      display: inline;
+    }
+  }
+
+  .views-field-uid {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    .views-field-title .field-content {
+      a {
+        text-decoration: underline 1px $yellow;
+      }
+    }
+  }
+
+}
 
 
 
