@@ -1,6 +1,6 @@
 uuid: faaeb9ef-0253-4e7e-80b3-48ac43d6fcb9
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - views.view.latest_news_view
@@ -17,7 +17,7 @@ plugin: 'views_block:latest_news_view-block_1'
 settings:
   id: 'views_block:latest_news_view-block_1'
   label: ''
-  label_display: visible
+  label_display: '0'
   provider: views
   views_label: ''
   items_per_page: none

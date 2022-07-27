@@ -4,6 +4,9 @@
 @import url(https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700;900&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap);
 
 .wrapper-page {
   width: 100%;
@@ -39,7 +42,6 @@
     display: flex;
     gap: 20px; }
     .wrapper-content .content-inner .content__item-left {
-      max-width: 308px;
       width: 100%;
       height: auto; }
     .wrapper-content .content-inner .content__item-main {
@@ -95,6 +97,11 @@ body {
     align-items: center;
     font-family: "Merriweather", serif;
     font-weight: 700; }
+    .header-region .site-branding .site-branding__logo img {
+      background: url(2b82d6977f5127ab0f2a9b53764d95e3.svg) no-repeat;
+      width: 45px;
+      height: 45px;
+      padding-left: 45px; }
   @media (min-width: 768px) {
     .header-region {
       display: flex; }
@@ -162,5 +169,93 @@ body {
   font-size: 0;
   height: 0;
   width: 0; }
+
+html,
+body {
+  background-image: none;
+  background-color: #FFFFFF; }
+
+.header > .container {
+  max-width: 1164px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px; }
+
+.wrapper-content {
+  max-width: 1440px;
+  margin: 0 auto; }
+  .wrapper-content .content__item-left {
+    width: 100%;
+    height: auto; }
+  .wrapper-content .content-inner {
+    display: block; }
+    @media (min-width: 768px) {
+      .wrapper-content .content-inner {
+        display: flex;
+        gap: 20px; } }
+    @media (min-width: 768px) {
+      .wrapper-content .content-inner .content__item-left {
+        max-width: 308px;
+        min-width: 168px; } }
+    .wrapper-content .content-inner .content__item-left .view-latest-news-view {
+      overflow: visible; }
+      .wrapper-content .content-inner .content__item-left .view-latest-news-view .view-content {
+        margin-bottom: unset; }
+    .wrapper-content .content-inner .content__item-left a {
+      text-decoration: none;
+      color: black; }
+    .wrapper-content .content-inner .content__item-left .views-field-field-heading-image .field-content {
+      margin-left: -1.125rem;
+      margin-right: -1.125rem; }
+      @media (min-width: 768px) {
+        .wrapper-content .content-inner .content__item-left .views-field-field-heading-image .field-content {
+          margin-left: unset;
+          margin-right: unset; } }
+    .wrapper-content .content-inner .content__item-left .view-header {
+      font-family: "Fira Sans", sans-serif;
+      font-weight: 800;
+      font-size: 2em;
+      color: black;
+      margin: 10px 0px; }
+    .wrapper-content .content-inner .content__item-left .views-row {
+      border-bottom: 1px solid #abb8c3; }
+      .wrapper-content .content-inner .content__item-left .views-row:last-child {
+        border-bottom: unset; }
+      .wrapper-content .content-inner .content__item-left .views-row .views-field-created {
+        font-family: "Fira Sans", sans-serif;
+        font-weight: 400;
+        color: #fcb900;
+        font-size: 12px; }
+        .wrapper-content .content-inner .content__item-left .views-row .views-field-created a {
+          text-transform: uppercase;
+          margin-right: 1rem; }
+      .wrapper-content .content-inner .content__item-left .views-row .views-field-title {
+        font-family: "Merriweather", serif;
+        font-weight: 900; }
+      .wrapper-content .content-inner .content__item-left .views-row .views-field-body p {
+        font-family: "Merriweather", serif;
+        font-weight: 300;
+        margin: 0;
+        display: inline; }
+      .wrapper-content .content-inner .content__item-left .views-row .views-row:hover .views-field-title .field-content {
+        box-shadow: inset 0 -1px 0 0 #fcb900; }
+      .wrapper-content .content-inner .content__item-left .views-row .content__item-main {
+        width: 100%;
+        height: auto; }
+      .wrapper-content .content-inner .content__item-left .views-row .content__item-bottom {
+        display: flex;
+        width: 100%;
+        gap: 20px; }
+        .wrapper-content .content-inner .content__item-left .views-row .content__item-bottom .content__item-bottom-center {
+          max-width: 584px;
+          width: 100%;
+          height: auto; }
+        .wrapper-content .content-inner .content__item-left .views-row .content__item-bottom .content__item-bottom-right {
+          max-width: 340px;
+          width: 100%;
+          height: auto; }
+      .wrapper-content .content-inner .content__item-left .views-row .content__item-down {
+        max-width: 1440px;
+        width: 100%; }
 
 

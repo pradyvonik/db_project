@@ -26,6 +26,15 @@
     align-items: center;
     font-family: "Merriweather", serif;
     font-weight: 700;
+    
+    .site-branding__logo img {
+      background: url('../../img/logo.svg')
+      no-repeat;
+      width: 45px;
+      height: 45px;
+      padding-left: 45px;
+    }
+
   }
 
   @include bp-up('desktop') {

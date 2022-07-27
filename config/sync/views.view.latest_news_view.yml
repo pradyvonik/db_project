@@ -6,7 +6,7 @@ dependencies:
     - field.storage.node.body
     - field.storage.node.field_category
     - field.storage.node.field_heading_image
-    - image.style.thumbnail
+    - image.style.mobile_view
     - node.type.article
   module:
     - image
@@ -134,8 +134,8 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_link: ''
-            image_style: thumbnail
+            image_link: content
+            image_style: mobile_view
             image_loading:
               attribute: lazy
           group_column: ''
@@ -157,7 +157,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -206,7 +206,7 @@ display:
           group_rows: true
           delta_limit: 1
           delta_offset: 0
-          delta_reversed: false
+          delta_reversed: true
           delta_first_last: false
           multi_type: separator
           separator: ''
@@ -224,8 +224,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '{{ field_category }}  {{ created }} '
             make_link: false
             path: ''
             absolute: false
@@ -476,7 +476,9 @@ display:
         type: fields
         options:
           default_field_elements: true
-          inline: {  }
+          inline:
+            title: title
+            body: body
           separator: ''
           hide_empty: false
       query:
@@ -598,7 +600,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -665,8 +667,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '{{ field_category }}  {{ created }} '
             make_link: false
             path: ''
             absolute: false
@@ -962,7 +964,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -1029,8 +1031,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '{{ field_category }} {{ created }} '
             make_link: false
             path: ''
             absolute: false
@@ -1299,7 +1301,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -1348,7 +1350,7 @@ display:
           group_rows: true
           delta_limit: 1
           delta_offset: 0
-          delta_reversed: false
+          delta_reversed: true
           delta_first_last: false
           multi_type: separator
           separator: ''
@@ -1366,8 +1368,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '{{ field_category }}  {{ created }} '
             make_link: false
             path: ''
             absolute: false
