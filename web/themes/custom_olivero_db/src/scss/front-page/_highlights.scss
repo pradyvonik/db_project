@@ -1,0 +1,111 @@
+@import "..";
+
+.view-top-news-view {
+  display: block;
+
+  .view-content {
+    margin-bottom: unset;
+  }
+
+  @include bp-up('desktop') {
+    display: flex;
+    padding: 0 20px;
+
+    .view-content {
+
+      .top-news-first {
+        img {
+          max-width: 576px;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .view-content {
+      .top-news-second {
+
+        img {
+          max-width: 268px;
+          max-height: 134px;
+          width: 100%;
+          object-fit: cover;
+          margin-left: unset;
+          margin-right: unset;
+        }
+
+        .views-field-title {
+          max-width: 268px;
+          width: 100%;
+          font-family: "Fira Sans", sans-serif;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 1.1;
+        }
+
+        .views-field-body {
+          max-width: 268px;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .views-field-field-heading-image .field-content {
+    margin-left: -1.125rem;
+    margin-right: -1.125rem;
+
+    @include bp-up('desktop') {
+      margin-left: unset;
+      margin-right: unset;
+    }
+  }
+
+  .views-field-field-category {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    text-transform: uppercase;
+    border: 1px solid black;
+    background-color: white;
+    display: inline-block;
+    letter-spacing: 1px;
+    line-height: 1;
+    padding: 5px 6px 3px;
+    transform: translateY(-10px);
+    margin-bottom: -10px;
+  }
+
+  .top-news-first {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .views-field-title {
+      display: block;
+      text-align: center;
+
+      @include bp-up('desktop') {
+        max-width: 576px;
+        width: 100%;
+        font-family: "Fira Sans", sans-serif;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 1.2;
+        letter-spacing: -1px;
+      }
+    }
+
+    .views-field-body {
+      display: block;
+      text-align: center;
+
+      @include bp-up('desktop') {
+        max-width: 576px;
+        width: 100%;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    }
+  }
+}

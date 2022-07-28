@@ -25,3 +25,4 @@
 /.env
 /*.sql
 /web/themes/*/node_modules
+/web/themes/*/dist
