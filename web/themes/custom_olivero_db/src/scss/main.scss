@@ -1,5 +1,16 @@
 @import "index";
 
+.wrapper {
+  margin-top: 25px;
+}
+
+.content__item-bottom {
+  display: block;
+  @include bp-up('desktop') {
+    display: flex;
+  }
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -49,7 +60,7 @@ a {
   &:hover {
     .views-field-title .field-content {
       a {
-        text-decoration: underline 1px $yellow;
+        box-shadow: inset 0 -2px 0 0 $orange;
       }
     }
   }

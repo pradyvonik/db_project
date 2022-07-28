@@ -1,0 +1,70 @@
+@import "..";
+
+.content__item-bottom-center {
+  .region--content-main{
+    .block-views-blockfashion-news-view-block-1{
+      .content__item-bottom-right{
+        display: none;
+      }
+
+      .attachment-before {
+        margin-bottom: unset;
+
+        .views-field-field-category {
+          font-family: "Fira Sans", sans-serif;
+          font-size: 28px;
+          font-weight: 800;
+          letter-spacing: 1px;
+          line-height: 31px;
+        }
+      }
+
+      .views-view-grid--horizontal {
+
+        div.views-view-grid__item{
+          flex-basis: 100%;
+
+          @include bp-up('desktop') {
+            flex-basis: calc(50% - 0.5625rem);
+          }
+        }
+
+        .views-view-grid__item-inner:hover {
+          .views-field-title {
+            a {
+              box-shadow: inset 0 -2px 0 0 $orange;
+            }
+          }
+        }
+
+        .views-field-title {
+          font-family: "Merriweather", serif;
+          font-size: 16px;
+          line-height: 1.5;
+          font-weight: 800;
+        }
+
+        .views-field-uid {
+          font-family: "Fira Sans", sans-serif;
+          font-size: 12px;
+          line-height: 1;
+          font-weight: 400;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          padding-right: 10px;
+        }
+
+        .views-field-created {
+          font-family: "Fira Sans", sans-serif;
+          font-size: 12px;
+          line-height: 1;
+          font-weight: 400;
+          letter-spacing: 1px;
+          color: $gray;
+        }
+      }
+
+    }
+
+  }
+}
