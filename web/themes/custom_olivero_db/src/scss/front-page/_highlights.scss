@@ -1,5 +1,7 @@
 @import "..";
 
+//Top news block
+
 .view-top-news-view {
   display: block;
 
@@ -106,6 +108,146 @@
         font-size: 14px;
         line-height: 1.5;
       }
+    }
+  }
+}
+
+// Featured news block
+
+.block-views-blockfeatured-block-view-block-1 {
+
+  .attachment-before {
+    margin-bottom: unset;
+
+    @include bp-up('desktop') {
+      .views-view-grid--horizontal {
+          .views-view-grid__item {
+            flex-basis: unset;
+            flex-shrink: 1;
+        }
+      }
+    }
+
+      @include bp-up('desktop') {
+        display: flex;
+        min-width: 25%;
+      }
+
+    .views-field-field-category {
+      font-family: "Fira Sans", sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 1px;
+
+      @include bp-up('desktop') {
+        font-size: 28px;
+        margin-bottom: 26px;
+      }
+    }
+
+    .views-field-nothing-1 {
+      font-family: "Merriweather", serif;
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 300;
+      color: $gray;
+
+      @include bp-up('desktop') {
+        font-size: 14px;
+        line-height: 1.4;
+      }
+    }
+
+    .views-field-nothing {
+      display: none;
+
+      @include bp-up('desktop') {
+        display: flex;
+        font-family: "Fira Sans", sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        &:hover a {
+          color: $yellow;
+        }
+      }
+    }
+  }
+
+  .cols-3 {
+    display: block;
+
+    @include bp-up('desktop') {
+      display: flex;
+    }
+
+    div.views-view-grid__item {
+      margin-right: unset;
+
+      @include bp-up('desktop') {
+        margin: 0;
+        padding: 0 8px;
+
+        &:nth-child(2n) {
+          margin: 0;
+        }
+      }
+    }
+
+    .views-field-title {
+      font-family: "Fira Sans", sans-serif;
+      font-size: 18px;
+      line-height: 1.1;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .views-field-created {
+      font-family: "Fira Sans", sans-serif;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: $gray;
+    }
+
+    .views-view-grid__item-inner:hover {
+      .views-field-title a {
+        text-decoration: underline 2px $yellow;
+      }
+    }
+
+    .views-field-field-heading-image .field-content {
+      margin-left: -1.125rem;
+      margin-right: -1.125rem;
+
+      @include bp-up('desktop') {
+        margin-left: unset;
+        margin-right: unset;
+      }
+    }
+
+    .views-field-field-category {
+      font-family: "Fira Sans", sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      text-transform: uppercase;
+      border: 1px solid black;
+      background-color: white;
+      display: inline-block;
+      letter-spacing: 1px;
+      line-height: 1;
+      padding: 5px 6px 3px;
+      transform: translateY(-10px);
+      margin-bottom: -10px;
+    }
+  }
+
+  @include bp-up('desktop') {
+    .view-featured-block-view {
+      display: flex;
     }
   }
 }

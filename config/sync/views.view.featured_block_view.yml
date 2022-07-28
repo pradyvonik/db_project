@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_category
     - field.storage.node.field_heading_image
-    - image.style.medium
+    - image.style.mobile_view
     - node.type.article
     - taxonomy.vocabulary.section
   content:
@@ -84,7 +84,7 @@ display:
           type: image
           settings:
             image_link: content
-            image_style: medium
+            image_style: mobile_view
             image_loading:
               attribute: lazy
           group_column: ''
@@ -633,23 +633,10 @@ display:
     position: 1
     display_options:
       pager:
-        type: mini
+        type: some
         options:
           offset: 0
           items_per_page: 3
-          total_pages: null
-          id: 0
-          tags:
-            next: ››
-            previous: ‹‹
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
       style:
         type: grid
         options:
@@ -675,7 +662,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions

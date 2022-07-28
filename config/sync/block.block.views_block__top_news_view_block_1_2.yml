@@ -11,7 +11,7 @@ dependencies:
 id: views_block__top_news_view_block_1_2
 theme: custom_olivero_db
 region: highlights
-weight: 0
+weight: -18
 provider: null
 plugin: 'views_block:top_news_view-block_1'
 settings:
