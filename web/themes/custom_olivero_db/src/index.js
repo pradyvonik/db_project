@@ -1,6 +1,7 @@
 /*
 scss
  */
+import './scss/_fonts.scss'
 import './scss/_libs.scss';
 import './scss/main.scss';
 import './scss/regions/_regions.scss';
