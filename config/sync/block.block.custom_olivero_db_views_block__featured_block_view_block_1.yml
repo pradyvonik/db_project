@@ -1,6 +1,6 @@
 uuid: 98afbcd9-5d62-4dfc-9eac-955e534b056a
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - views.view.featured_block_view
@@ -10,14 +10,14 @@ dependencies:
     - custom_olivero_db
 id: custom_olivero_db_views_block__featured_block_view_block_1
 theme: custom_olivero_db
-region: header
-weight: -3
+region: highlights
+weight: -17
 provider: null
 plugin: 'views_block:featured_block_view-block_1'
 settings:
   id: 'views_block:featured_block_view-block_1'
   label: ''
-  label_display: visible
+  label_display: '0'
   provider: views
   views_label: ''
   items_per_page: none
