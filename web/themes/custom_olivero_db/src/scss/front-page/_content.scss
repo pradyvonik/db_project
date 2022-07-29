@@ -8,7 +8,7 @@
   @include bp-up('desktop') {
     max-width: 308px;
     min-width: 168px;
-
+    padding: 0 20px;
   }
 
   .view-latest-news-view {
@@ -30,10 +30,8 @@
   }
 
   .view-header {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 800;
     font-size: 2em;
-    color: black;
+    //color: black;
     margin: 10px 0px;
   }
 
