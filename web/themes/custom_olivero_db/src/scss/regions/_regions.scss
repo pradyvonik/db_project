@@ -1,3 +1,5 @@
+@import "..";
+
 .wrapper-page {
   width: 100%;
   max-width: 1920px;
@@ -60,9 +62,14 @@
       gap: 20px;
 
       .content__item-bottom-center {
-        max-width: 584px;
+        //max-width: 584px;
         width: 100%;
         height: auto;
+
+        @include bp-up('desktop') {
+          max-width: 584px;
+          width: 100%;
+        }
       }
 
       .content__item-bottom-right {
