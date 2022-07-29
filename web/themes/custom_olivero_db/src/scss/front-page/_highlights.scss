@@ -213,12 +213,6 @@
       color: $gray;
     }
 
-    .views-view-grid__item-inner:hover {
-      .views-field-title a {
-        text-decoration: underline 2px $yellow;
-      }
-    }
-
     .views-field-field-heading-image .field-content {
       margin-left: -1.125rem;
       margin-right: -1.125rem;
@@ -233,7 +227,6 @@
       font-family: "Fira Sans", sans-serif;
       font-weight: 400;
       font-size: 11px;
-      text-transform: uppercase;
       border: 1px solid black;
       background-color: white;
       display: inline-block;
