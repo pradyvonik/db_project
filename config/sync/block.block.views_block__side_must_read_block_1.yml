@@ -1,0 +1,24 @@
+uuid: 042710a1-de2c-419d-9435-5b7c18b0b985
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.side_must_read
+  module:
+    - views
+  theme:
+    - custom_olivero_db
+id: views_block__side_must_read_block_1
+theme: custom_olivero_db
+region: header
+weight: 0
+provider: null
+plugin: 'views_block:side_must_read-block_1'
+settings:
+  id: 'views_block:side_must_read-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }
