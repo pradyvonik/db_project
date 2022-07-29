@@ -11,11 +11,12 @@
 
   @include bp-up('desktop') {
     display: flex;
-    padding: 0 20px;
 
     .view-content {
 
       .top-news-first {
+        padding: 0 20px;
+
         img {
           max-width: 576px;
           width: 100%;
@@ -26,6 +27,7 @@
 
     .view-content {
       .top-news-second {
+        padding: 0 20px;
 
         img {
           max-width: 268px;
@@ -120,6 +122,8 @@
     margin-bottom: unset;
 
     @include bp-up('desktop') {
+      padding: 0 10px;
+
       .views-view-grid--horizontal {
           .views-view-grid__item {
             flex-basis: unset;
@@ -181,6 +185,7 @@
 
     @include bp-up('desktop') {
       display: flex;
+      padding: 0 -8px;
     }
 
     div.views-view-grid__item {
@@ -235,6 +240,7 @@
       padding: 5px 6px 3px;
       transform: translateY(-10px);
       margin-bottom: -10px;
+      text-transform: uppercase;
     }
   }
 
