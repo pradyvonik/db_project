@@ -236,7 +236,7 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 100
+            max_length: 50
             word_boundary: true
             ellipsis: true
             more_link: false
@@ -471,7 +471,18 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      header: {  }
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: Celebrities
+          tokenize: false
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -669,40 +680,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-      pager:
-        type: some
-        options:
-          offset: 1
-          items_per_page: 4
-      defaults:
-        fields: false
-      display_description: ''
-      display_extenders: {  }
-      displays:
-        block_1: block_1
-      attachment_position: after
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - user
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:field.storage.node.field_category'
-        - 'config:field.storage.node.field_heading_image'
-  attachment_2:
-    id: attachment_2
-    display_title: 'Celebrities news title'
-    display_plugin: attachment
-    position: 3
-    display_options:
-      fields:
-        field_category:
-          id: field_category
-          table: node__field_category
-          field: field_category
+        body:
+          id: body
+          table: node__body
+          field: body
           relationship: none
           group_type: group
           admin_label: ''
@@ -726,14 +707,14 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 0
+            max_length: 60
             word_boundary: true
             ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
             strip_tags: false
-            trim: false
+            trim: true
             preserve_tags: ''
             html: false
           element_type: ''
@@ -748,16 +729,15 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
           group_columns: {  }
           group_rows: true
-          delta_limit: 1
+          delta_limit: 0
           delta_offset: 0
-          delta_reversed: true
+          delta_reversed: false
           delta_first_last: false
           multi_type: separator
           separator: ', '
@@ -765,14 +745,17 @@ display:
       pager:
         type: some
         options:
-          offset: 0
-          items_per_page: 1
+          offset: 1
+          items_per_page: 4
       defaults:
         fields: false
+        header: false
       display_description: ''
+      header: {  }
       display_extenders: {  }
       displays:
         block_1: block_1
+      attachment_position: after
     cache_metadata:
       max-age: -1
       contexts:
@@ -782,15 +765,43 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_category'
+        - 'config:field.storage.node.field_heading_image'
   block_1:
     id: block_1
     display_title: 'Celebrities news heading block'
     display_plugin: block
     position: 1
     display_options:
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: celebrities-news-first
+          default_row_class: true
+      row:
+        type: fields
+        options: {  }
+      defaults:
+        style: false
+        row: false
+        header: false
       display_description: ''
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: Celebrities
+          tokenize: false
       display_extenders: {  }
+      block_description: celebrities-news-top
     cache_metadata:
       max-age: -1
       contexts:

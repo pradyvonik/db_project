@@ -16,7 +16,6 @@
 
       @include bp-up('desktop') {
         display: flex;
-        gap: 20px;
       }
     }
   }
@@ -26,6 +25,12 @@
   display: block;
   @include bp-up('desktop') {
     display: flex;
+  }
+
+  .region--content-main {
+    @include bp-up('desktop') {
+      padding: 0 20px;
+    }
   }
 }
 
@@ -39,6 +44,16 @@ a {
 }
 
 .content-inner {
+
+  .view-header {
+      font-family: "Fira Sans", sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      line-height: 31px;
+      margin-bottom: 16px;
+  }
+
   .views-row, .views-view-grid__item {
 
     .views-field-field-category {
