@@ -1,21 +1,21 @@
-uuid: f84bbbab-f550-41a5-b0cc-9370b8e4e97d
+uuid: 042710a1-de2c-419d-9435-5b7c18b0b985
 langcode: en
 status: false
 dependencies:
   config:
-    - views.view.top_taxonomies
+    - views.view.side_must_read
   module:
     - views
   theme:
     - custom_olivero_db
-id: custom_olivero_db_views_block__top_taxonomies_block_1
+id: views_block__side_must_read_block_1
 theme: custom_olivero_db
 region: header
-weight: -4
+weight: 0
 provider: null
-plugin: 'views_block:top_taxonomies-block_1'
+plugin: 'views_block:side_must_read-block_1'
 settings:
-  id: 'views_block:top_taxonomies-block_1'
+  id: 'views_block:side_must_read-block_1'
   label: ''
   label_display: '0'
   provider: views
