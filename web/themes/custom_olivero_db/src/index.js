@@ -11,4 +11,5 @@ import './scss/header/_search.scss';
 import './scss/front-page/_content.scss';
 import './scss/front-page/_highlights.scss';
 import './scss/front-page/_content_main.scss';
+import './scss/front-page/_right_sidebar.scss';
 

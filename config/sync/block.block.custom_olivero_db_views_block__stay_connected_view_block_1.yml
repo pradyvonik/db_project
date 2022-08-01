@@ -1,6 +1,6 @@
 uuid: f5dad2cb-8c2a-43f0-9174-e6fe885cbdb3
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - views.view.stay_connected_view
@@ -17,7 +17,7 @@ plugin: 'views_block:stay_connected_view-block_1'
 settings:
   id: 'views_block:stay_connected_view-block_1'
   label: ''
-  label_display: visible
+  label_display: '0'
   provider: views
   views_label: ''
   items_per_page: none
