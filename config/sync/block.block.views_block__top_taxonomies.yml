@@ -1,17 +1,17 @@
-uuid: d59a4394-eec3-4fc6-801c-37757ef0df07
+uuid: f5b664e8-85cf-441f-afe7-4b9a6dd5f558
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.top_taxonomies
   module:
     - views
   theme:
-    - olivero
-id: views_block__top_taxonomies_block_1
-theme: olivero
-region: content_below
-weight: -12
+    - custom_olivero_db
+id: views_block__top_taxonomies
+theme: custom_olivero_db
+region: footer_up
+weight: -17
 provider: null
 plugin: 'views_block:top_taxonomies-block_1'
 settings:
