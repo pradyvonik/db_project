@@ -115,3 +115,28 @@
     margin: auto;
   }
 }
+
+//TV, Food & Drink
+
+.block-views-blocktv-news-view-block-1, .block-views-blockfood-drink-news-view-block-1 {
+
+  .views-row {
+    //display: flex;
+
+    .views-field-field-heading-image img{
+      max-width: 214px;
+      max-height: 171px;
+      width: 100%;
+      object-fit: cover;
+
+      @include bp-up('desktop') {
+        width: 90px;
+        height: 90px;
+      }
+    }
+
+    .views-field-title, .views-field-created {
+      //display: block;
+    }
+  }
+}
