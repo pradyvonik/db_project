@@ -27,5 +27,74 @@
     }
   }
 
-  
+  .block-views-blockmusic-festivals-view-block-1{
+
+    .view-header{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      overflow-wrap: break-word;
+
+      .title-top {
+        position: relative;
+        left: 140px;
+        background-color: black;
+        color: white;
+        padding: 4px 8px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.6px;
+        border-radius: 3px 3px 3px 0;
+      }
+
+      .main-title {
+        position: relative;
+        font-family: "Fira Sans", sans-serif;
+        font-size: 32px;
+        font-weight: bold;
+        letter-spacing: -1px;
+        padding: 2px 10px;
+      }
+
+      .title-bottom {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 13px;
+        line-height: 1;
+        font-style: italic;
+        font-weight: normal;
+        letter-spacing: normal;
+        color: $yellow;
+        position: relative;
+        margin: 2px auto;
+
+        &:before {
+          margin: auto 0 auto 10px;
+          left: 100%;
+          content: '';
+          position: absolute;
+          height: 1px;
+          width: 1500px;
+          top: 3px;
+          bottom: 0;
+          background-color: #e3e3e3;
+        }
+
+        &:after {
+          margin: auto 10px auto 0;
+          right: 100%;
+          content: '';
+          position: absolute;
+          height: 1px;
+          width: 1500px;
+          top: 3px;
+          bottom: 0;
+          background-color: #e3e3e3;
+        }
+      }
+
+    }
+  }
 }

@@ -571,19 +571,6 @@ display:
         header: false
       display_description: ''
       header:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: false
-          content:
-            value: 'Music Festivals'
-            format: basic_html
-          tokenize: false
         area_text_custom:
           id: area_text_custom
           table: views
@@ -593,7 +580,18 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: false
-          content: '<br>Popular'
+          content: '<div class="title-top">POPULAR</div>'
+          tokenize: false
+        area_text_custom_2:
+          id: area_text_custom_2
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: '<div class="main-title">Music Festivals</div>'
           tokenize: false
         area_text_custom_1:
           id: area_text_custom_1
@@ -604,7 +602,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: false
-          content: '<br>Find Your Perfect Music Festival'
+          content: '<div class="title-bottom">Find Your Perfect Music Festival</div>'
           tokenize: false
       display_extenders: {  }
     cache_metadata:
