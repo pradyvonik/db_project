@@ -3,8 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.storage.node.field_heading_image
-    - image.style.thumbnail
+    - image.style.medium
     - node.type.article
     - taxonomy.vocabulary.section
   content:
@@ -83,7 +84,7 @@ display:
           type: image
           settings:
             image_link: content
-            image_style: thumbnail
+            image_style: medium
             image_loading:
               attribute: lazy
           group_column: ''
@@ -326,7 +327,10 @@ display:
       style:
         type: default
       row:
-        type: fields
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
       query:
         type: views_query
         options:

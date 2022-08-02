@@ -1,21 +1,21 @@
-uuid: f5dad2cb-8c2a-43f0-9174-e6fe885cbdb3
+uuid: 12cb7513-337f-4e4c-a1ed-2e8a5a5586f5
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.stay_connected_view
+    - views.view.tv_news_view
   module:
     - views
   theme:
     - custom_olivero_db
-id: custom_olivero_db_views_block__stay_connected_view_block_1
+id: views_block__tv_news_view_block
 theme: custom_olivero_db
 region: right_sidebar
-weight: -20
+weight: -18
 provider: null
-plugin: 'views_block:stay_connected_view-block_1'
+plugin: 'views_block:tv_news_view-block_1'
 settings:
-  id: 'views_block:stay_connected_view-block_1'
+  id: 'views_block:tv_news_view-block_1'
   label: ''
   label_display: '0'
   provider: views
