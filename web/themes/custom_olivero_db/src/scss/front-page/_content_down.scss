@@ -1,0 +1,31 @@
+@import "..";
+.region--content-down {
+
+  //big AD
+  .block-views-blockbig-ad-view-block-1 {
+    margin-bottom: 50px;
+
+    .view-header {
+      margin-bottom: 5px;
+      color: $gray;
+      font-size: 10px;
+      text-align: center;
+      display: block;
+      font-family: Verdana, sans-serif;
+      line-height: 21px;
+    }
+
+    .view-content .field-content img {
+      margin: auto;
+
+      @include bp-up('desktop') {
+        background: url('../../img/ad_big.jpg') no-repeat;
+        width: 970px;
+        height: 250px;
+        padding-left: 970px;
+      }
+    }
+  }
+
+  
+}
