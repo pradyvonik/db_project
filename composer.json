@@ -61,17 +61,25 @@
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
         "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+            "@update-git-hooks","DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ]
+            "@update-git-hooks","DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "update-git-hooks": "[[ -f ./vendor/bin/cghooks ]] && ./vendor/bin/cghooks update ||:;"
     },
     "extra": {
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
-            }
+            },
+            "file-mapping": {
+                "[web-root]/.eslintrc.json": false                      
+              },
+              "hooks": {
+                  "pre-commit": "./utility/git-hooks/pre-commit.sh",
+                  "commit-msg": "./utility/git-hooks/commit-msg.sh $1"
+              }
         },
         "installer-paths": {
             "web/core": ["type:drupal-core"],
