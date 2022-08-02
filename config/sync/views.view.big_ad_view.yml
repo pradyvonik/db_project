@@ -265,7 +265,7 @@ display:
           value:
             min: ''
             max: ''
-            value: '970'
+            value: '300'
           group: 1
           exposed: false
           expose:
