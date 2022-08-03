@@ -1,0 +1,98 @@
+@import "..";
+
+.region--content-editorial {
+
+  @include bp-up('desktop') {
+    display: flex;
+  }
+
+  .block-views-blockeditor-picks-block-1, .block-views-blockfooter-must-read-block-1 {
+
+    @include bp-up('desktop') {
+      display: inline-block;
+      width: 33.3%;
+      margin-bottom: 48px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  //Editor picks block
+  .view-editor-picks, .view-footer-must-read {
+
+    .view-header {
+      font-family: "Fira Sans", sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 31px;
+      margin-bottom: 16px;
+    }
+
+    .views-row article {
+      display: flex;
+
+      @include bp-up('desktop') {
+        padding-bottom: 12.5px;
+        margin-bottom: 12.5px;
+      }
+
+      &:hover {
+        .article-title span {
+          box-shadow: inset 0 -2px 0 0 $orange;
+        }
+      }
+
+      .article-image {
+        flex: 0 0 30%;
+        width: 30%;
+        display: block;
+
+        .field__item {
+          aspect-ratio: 214/171;
+
+          @include bp-up('desktop') {
+            aspect-ratio: 112/78;
+          }
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+
+          @include bp-up('desktop') {
+            max-width: 112px;
+            max-height: 78px;
+          }
+        }
+      }
+
+      .article-teaser-body {
+        padding: 2px 0 0 14px;
+
+        .article-title {
+          font-family: "Fira Sans", sans-serif;
+          font-size: 16px;
+          line-height: 1.1;
+          font-weight: 600;
+          margin: 0 0 6px;
+        }
+
+        .node__submitted {
+          font-family: "Fira Sans", sans-serif;
+          font-size: 12px;
+          line-height: 1;
+          font-weight: 400;
+          letter-spacing: 1px;
+          color: $gray;
+        }
+      }
+
+      &::after {
+        width: 0;
+        height: 0;
+        border: none;
+      }
+    }
+  }
+}

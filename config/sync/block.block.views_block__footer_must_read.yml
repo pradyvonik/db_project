@@ -1,0 +1,24 @@
+uuid: c7096572-989b-4459-86a3-df995dde4a3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.footer_must_read
+  module:
+    - views
+  theme:
+    - custom_olivero_db
+id: views_block__footer_must_read
+theme: custom_olivero_db
+region: content_editorial
+weight: -19
+provider: null
+plugin: 'views_block:footer_must_read-block_1'
+settings:
+  id: 'views_block:footer_must_read-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }
