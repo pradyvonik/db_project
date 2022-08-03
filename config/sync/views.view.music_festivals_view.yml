@@ -236,7 +236,7 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 100
+            max_length: 55
             word_boundary: true
             ellipsis: true
             more_link: false
@@ -453,7 +453,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: ''
+          row_class: music-festivals
           default_row_class: true
       row:
         type: fields
@@ -567,7 +567,22 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: music-festivals
+          default_row_class: true
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
       defaults:
+        style: false
+        row: false
         header: false
       display_description: ''
       header:
