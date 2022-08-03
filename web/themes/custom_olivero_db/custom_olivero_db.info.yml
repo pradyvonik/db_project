@@ -16,5 +16,6 @@ regions:
   content_main: 'Main Content'
   right_sidebar: 'Right Sidebar'
   content_down: 'Content Down'
+  content_editorial: 'Content Editorial'
   footer_up: 'Footer Up'
   footer_down: 'Footer Down'

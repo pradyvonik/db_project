@@ -13,3 +13,4 @@ import "./scss/front-page/_highlights.scss";
 import "./scss/front-page/_content_main.scss";
 import "./scss/front-page/_right_sidebar.scss";
 import "./scss/front-page/_content_down.scss";
+import "./scss/front-page/_content_editorial.scss";

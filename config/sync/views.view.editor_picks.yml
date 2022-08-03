@@ -1,4 +1,4 @@
-uuid: b13a22d6-28c4-4341-a0ac-e6483a193b10
+uuid: b56b324d-300a-4b13-a00b-4de97a7d1e54
 langcode: en
 status: true
 dependencies:
@@ -7,13 +7,13 @@ dependencies:
     - node.type.article
     - taxonomy.vocabulary.editor_s_category
   content:
-    - 'taxonomy_term:editor_s_category:bde38030-333d-43fe-85ab-34d20260bff7'
+    - 'taxonomy_term:editor_s_category:175dd61f-34d5-4d44-af15-55f940ea2e8f'
   module:
     - node
     - taxonomy
     - user
-id: footer_must_read
-label: 'Footer Must Read'
+id: editor_picks
+label: 'Editor Picks'
 module: views
 description: ''
 tag: ''
@@ -26,7 +26,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Footer Must Read'
+      title: 'Editor Picks'
       fields:
         title:
           id: title
@@ -139,6 +139,7 @@ display:
           plugin_id: bundle
           value:
             article: article
+          group: 1
           expose:
             operator_limit_selection: false
             operator_list: {  }
@@ -152,7 +153,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            21: 21
+            20: 20
           group: 1
           exposed: false
           expose:
@@ -188,6 +189,10 @@ display:
           hierarchy: false
           limit: true
           error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: default
       row:
@@ -213,7 +218,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: false
-          content: 'Must Read'
+          content: 'Editor Picks'
           tokenize: false
       footer: {  }
       display_extenders: {  }
@@ -228,10 +233,11 @@ display:
       tags: {  }
   block_1:
     id: block_1
-    display_title: Block
+    display_title: 'Editor Picks'
     display_plugin: block
     position: 1
     display_options:
+      display_description: ''
       display_extenders: {  }
     cache_metadata:
       max-age: -1

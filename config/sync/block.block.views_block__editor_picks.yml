@@ -1,21 +1,21 @@
-uuid: f5b664e8-85cf-441f-afe7-4b9a6dd5f558
+uuid: 8fdf8378-db34-4fa0-beae-a9972ae2e23e
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.top_taxonomies
+    - views.view.editor_picks
   module:
     - views
   theme:
     - custom_olivero_db
-id: views_block__top_taxonomies
+id: views_block__editor_picks
 theme: custom_olivero_db
 region: content_editorial
-weight: -18
+weight: -20
 provider: null
-plugin: 'views_block:top_taxonomies-block_1'
+plugin: 'views_block:editor_picks-block_1'
 settings:
-  id: 'views_block:top_taxonomies-block_1'
+  id: 'views_block:editor_picks-block_1'
   label: ''
   label_display: '0'
   provider: views
