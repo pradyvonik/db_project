@@ -1,6 +1,6 @@
 uuid: f5b664e8-85cf-441f-afe7-4b9a6dd5f558
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - views.view.top_taxonomies
@@ -10,8 +10,8 @@ dependencies:
     - custom_olivero_db
 id: views_block__top_taxonomies
 theme: custom_olivero_db
-region: footer_up
-weight: -17
+region: content_editorial
+weight: -18
 provider: null
 plugin: 'views_block:top_taxonomies-block_1'
 settings:
