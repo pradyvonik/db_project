@@ -1,4 +1,5 @@
 @import "..";
+
 .region--content-down {
 
   //big AD
@@ -27,5 +28,270 @@
     }
   }
 
-  
+  // Music festivals blockss
+  .block-views-blockmusic-festivals-view-block-1 {
+
+    @include bp-up('desktop') {
+      position: relative;
+    }
+
+    .view-display-id-block_1 {
+
+      @include bp-up('desktop') {
+        display: flex;
+        padding-top: 130px;
+        align-items: flex-start;
+        justify-content: space-around;
+      }
+    }
+
+    .view-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      overflow-wrap: break-word;
+
+      @include bp-up('desktop') {
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+
+      .title-top {
+        position: relative;
+        left: 140px;
+        background-color: black;
+        color: white;
+        padding: 4px 8px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.6px;
+        border-radius: 3px 3px 3px 0;
+
+        @include bp-up('desktop') {
+          left: 205px;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 0;
+          border: 5px solid transparent;
+          border-top-color: black;
+          border-bottom: 0;
+          border-left: 0;
+          margin-left: 0;
+          margin-bottom: -5px;
+        }
+      }
+
+      .main-title {
+        position: relative;
+        font-family: "Fira Sans", sans-serif;
+        font-size: 32px;
+        font-weight: bold;
+        letter-spacing: -1px;
+        padding: 2px 10px;
+
+        @include bp-up('desktop') {
+          font-size: 54px;
+          line-height: 1;
+          letter-spacing: -2px;
+          padding: 0 20px 10px;
+        }
+      }
+
+      .title-bottom {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 13px;
+        line-height: 1;
+        font-style: italic;
+        font-weight: normal;
+        letter-spacing: normal;
+        color: $yellow;
+        position: relative;
+        margin: 2px auto;
+
+        @include bp-up('desktop') {
+          font-size: 15px;
+          max-width: 80%;
+        }
+
+        &:before {
+          margin: auto 0 auto 10px;
+          left: 100%;
+          content: '';
+          position: absolute;
+          height: 1px;
+          width: 1500px;
+          top: 3px;
+          bottom: 0;
+          background-color: $lightgray;
+        }
+
+        &:after {
+          margin: auto 10px auto 0;
+          right: 100%;
+          content: '';
+          position: absolute;
+          height: 1px;
+          width: 1500px;
+          top: 3px;
+          bottom: 0;
+          background-color: $lightgray;
+        }
+      }
+    }
+
+    .view-content:hover {
+      .views-field-title {
+        a {
+          box-shadow: inset 0 -2px 0 0 $orange;
+        }
+      }
+    }
+
+    .attachment-before, .view-music-festivals-view > :nth-child(3), .attachment-after {
+      margin-bottom: 40px;
+
+      .views-row {
+        display: grid;
+
+        .views-field {
+          justify-self: center;
+        }
+
+        p {
+          text-align: center;
+          margin: unset;
+        }
+
+        .views-field-field-category {
+          border: 1px solid black;
+          background-color: white;
+          display: inline-block;
+          font-family: "Fira Sans", sans-serif;
+          font-size: 11px;
+          font-weight: 400;
+          letter-spacing: 1px;
+          line-height: 1;
+          padding: 5px 6px 3px;
+          transform: translateY(-10px);
+          margin-bottom: -10px;
+          text-transform: uppercase;
+        }
+
+        .views-field-title {
+          margin: 10px 0 0;
+          font-family: "Fira Sans", sans-serif;
+          font-size: 18px;
+          line-height: 1.2;
+          font-weight: 600;
+          letter-spacing: 0;
+          text-align: center;
+        }
+
+        .views-field-body {
+          font-family: "Merriweather", serif;
+          margin: 4px 0;
+          font-size: 14px;
+          display: block;
+          color: $gray;
+          line-height: 1.5;
+        }
+
+        .views-field-uid {
+          font-family: "Fira Sans", sans-serif;
+          font-size: 12px;
+          line-height: 1;
+          font-weight: 400;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+      }
+
+      .views-field-field-heading-image .field-content {
+        margin-left: -1.125rem;
+        margin-right: -1.125rem;
+
+        @include bp-up('desktop') {
+          margin-left: unset;
+          margin-right: unset;
+        }
+      }
+
+    }
+
+    .attachment-before, .attachment-after {
+
+      @include bp-up('desktop') {
+        display: inline-block;
+        width: 25%;
+
+        .views-field-field-heading-image {
+          max-height: 312px;
+          max-width: 312px;
+          width: 100%;
+
+
+          .field-content {
+            aspect-ratio: 1/1;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+
+          }
+        }
+      }
+    }
+
+    .view-music-festivals-view > :nth-child(3) {
+
+      @include bp-up('desktop') {
+        display: inline-block;
+        padding-left: 24px;
+        padding-right: 24px;
+        width: 50%;
+
+        .views-field-field-heading-image {
+          max-height: 450px;
+          max-width: 672px;
+          width: 100%;
+
+          .field-content {
+            aspect-ratio: 672/450;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+
+        .views-row {
+          .views-field-field-category {
+            font-size: 15px;
+            font-weight: 600;
+          }
+
+          .views-field-title {
+            font-size: 32px;
+            letter-spacing: -1px;
+          }
+        }
+      }
+    }
+
+  }
+
 }

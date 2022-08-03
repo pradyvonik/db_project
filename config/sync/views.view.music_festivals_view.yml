@@ -236,7 +236,7 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 100
+            max_length: 55
             word_boundary: true
             ellipsis: true
             more_link: false
@@ -453,7 +453,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: ''
+          row_class: music-festivals
           default_row_class: true
       row:
         type: fields
@@ -567,23 +567,25 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: music-festivals
+          default_row_class: true
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
       defaults:
+        style: false
+        row: false
         header: false
       display_description: ''
       header:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: false
-          content:
-            value: 'Music Festivals'
-            format: basic_html
-          tokenize: false
         area_text_custom:
           id: area_text_custom
           table: views
@@ -593,7 +595,18 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: false
-          content: '<br>Popular'
+          content: '<div class="title-top">POPULAR</div>'
+          tokenize: false
+        area_text_custom_2:
+          id: area_text_custom_2
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: '<div class="main-title">Music Festivals</div>'
           tokenize: false
         area_text_custom_1:
           id: area_text_custom_1
@@ -604,7 +617,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: false
-          content: '<br>Find Your Perfect Music Festival'
+          content: '<div class="title-bottom">Find Your Perfect Music Festival</div>'
           tokenize: false
       display_extenders: {  }
     cache_metadata:
