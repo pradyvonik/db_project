@@ -16,10 +16,7 @@
     margin: 0 auto;
     padding: 15px 0;
   }
-}
 
-
-.header-region {
   .header-box {
     width: 100%;
   }
@@ -31,6 +28,7 @@
     display: flex;
   }
 }
+
 
 .wrapper-content-top {
   width: 100%;
@@ -107,5 +105,12 @@
       }
     }
   }
+}
+
+.footer-region {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
 }
 
