@@ -1,0 +1,148 @@
+@import "..";
+
+.region--footer-up {
+  display: block;
+
+  @include bp-up('desktop') {
+    display: flex;
+    justify-content: center;
+  }
+
+  .block-views-blockfooter-site-logo-block-1 {
+    margin-bottom: unset;
+
+    @include bp-up('desktop') {
+      margin-top: 50px;
+      width: 25%;
+      padding: 0 24px;
+    }
+
+
+    .view-id-footer_site_logo {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 40px;
+
+      .view-content {
+        margin-bottom: unset;
+
+        .views-field-field-footer-row-picture {
+          margin-right: 10px;
+
+          img {
+            background: url('../../img/logo.svg') no-repeat;
+            width: 45px;
+            height: 45px;
+            padding-left: 45px;
+          }
+        }
+      }
+
+      .view-footer {
+        .sitename {
+          font-family: "Merriweather", serif;
+          font-size: 30px;
+          font-weight: 700;
+          line-height: 1.1;
+        }
+
+        .site_slogan {
+          font-family: "Fira Sans", sans-serif;
+          font-size: 10px;
+          font-weight: 300;
+          letter-spacing: 1.8px;
+          line-height: 1;
+        }
+      }
+    }
+  }
+
+  .block-block-content {
+    margin-bottom: unset;
+
+    @include bp-up('desktop') {
+      width: 50%;
+      padding: 0 24px;
+    }
+
+    h3 {
+      text-align: center;
+      font-family: "Fira Sans", sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      line-height: 26px;
+      margin: 20px 0;
+
+      @include bp-up('desktop') {
+        text-align: left;
+      }
+    }
+
+    p {
+      font-family: "Merriweather", serif;
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 300;
+      color: $darkgray;
+      margin-top: 0;
+      margin-bottom: 10px;
+
+      a {
+        text-decoration: none;
+        color: $yellow;
+        box-shadow: unset;
+
+        &:hover {
+          box-shadow: unset;
+          color: $yellow;
+        }
+      }
+    }
+  }
+
+  .block-views-blocksocial-media-view-block-2 {
+
+    @include bp-up('desktop') {
+      width: 25%;
+      padding: 0 24px;
+    }
+
+    .view-id-social_media_view {
+      display: block;
+      justify-content: center;
+
+      .view-header {
+        text-align: center;
+        font-family: "Fira Sans", sans-serif;
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        line-height: 26px;
+        margin: 26px 0 20px 0;
+
+        @include bp-up('desktop') {
+          text-align: left;
+        }
+      }
+
+      .view-content {
+        .views-view-grid--horizontal {
+          justify-content: center;
+
+          @include bp-up('desktop') {
+            justify-content: left;
+          }
+
+          .views-view-grid__item {
+            width: 45px;
+            height: 45px;
+            flex-basis: unset;
+            margin: unset;
+          }
+        }
+      }
+    }
+  }
+}
