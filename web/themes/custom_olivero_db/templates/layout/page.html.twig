@@ -131,9 +131,10 @@
 
   {# footer down #}
   <footer class="footer-region">
-  {% if page.footer_down %}
+  {% if page.footer_down and  page.footer_last %}
     <div class="footer_down">
       {{ page.footer_down }}
+      {{ page.footer_last }}
     </div>
   {% endif %}
   </footer>

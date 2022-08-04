@@ -1,6 +1,6 @@
 uuid: c61c2da1-5571-4931-9053-d7a6142993fb
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - system.menu.footer
@@ -10,8 +10,8 @@ dependencies:
     - custom_olivero_db
 id: custom_olivero_db_footer
 theme: custom_olivero_db
-region: header
-weight: -11
+region: footer_last
+weight: -19
 provider: null
 plugin: 'system_menu_block:footer'
 settings:
