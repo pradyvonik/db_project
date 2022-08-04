@@ -1,6 +1,6 @@
 uuid: 8a3c7371-461d-4528-8386-dfb56c33773a
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - system.menu.main
@@ -13,7 +13,7 @@ _core:
 id: custom_olivero_db_main_menu
 theme: custom_olivero_db
 region: primary_menu
-weight: -16
+weight: -20
 provider: null
 plugin: 'system_menu_block:main'
 settings:
