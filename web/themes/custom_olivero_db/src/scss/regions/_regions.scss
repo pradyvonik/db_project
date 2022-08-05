@@ -104,6 +104,15 @@
         padding-right: 20px;
       }
     }
+
+    .footer__up {
+      width: 100%;
+
+      @include bp-up('desktop') {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
   }
 }
 

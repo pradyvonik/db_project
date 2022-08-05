@@ -14,4 +14,5 @@ import "./scss/front-page/_content_main.scss";
 import "./scss/front-page/_right_sidebar.scss";
 import "./scss/front-page/_content_down.scss";
 import "./scss/front-page/_content_editorial.scss";
+import "./scss/front-page/_footer_up.scss";
 import "./scss/front-page/_footer_down.scss";
