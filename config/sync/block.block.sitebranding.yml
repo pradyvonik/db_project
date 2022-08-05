@@ -1,0 +1,23 @@
+uuid: c2657f77-81a7-48c8-8ba9-a9bfcad2f9e1
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - custom_olivero_db
+id: sitebranding
+theme: custom_olivero_db
+region: footer_up
+weight: -19
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }
