@@ -21,3 +21,4 @@ import "./scss/front-page/_footer_down.scss";
 js
  */
 import "./js/header";
+import "./js/scroll";
