@@ -67,7 +67,7 @@
         height: auto;
 
         @include bp-up('desktop') {
-          max-width: 584px;
+          //max-width: 584px;
           width: 100%;
         }
       }

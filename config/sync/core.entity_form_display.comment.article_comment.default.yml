@@ -1,0 +1,61 @@
+uuid: d5bc0104-9691-4456-8a20-6ee239145f3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.article_comment
+    - field.field.comment.article_comment.comment_body
+    - field.field.comment.article_comment.field_author_email
+    - field.field.comment.article_comment.field_author_name
+    - field.field.comment.article_comment.field_author_website
+    - field.field.comment.article_comment.field_save_author
+  module:
+    - link
+    - text
+id: comment.article_comment.default
+targetEntityType: comment
+bundle: article_comment
+mode: default
+content:
+  comment_body:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_author_email:
+    type: email_default
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_author_name:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_author_website:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_save_author:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  author: true
+  subject: true
