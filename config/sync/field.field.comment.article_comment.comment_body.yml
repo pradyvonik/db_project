@@ -1,0 +1,21 @@
+uuid: 947941ae-d571-4007-a504-b24b2fe8cbbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.article_comment
+    - field.storage.comment.comment_body
+  module:
+    - text
+id: comment.article_comment.comment_body
+field_name: comment_body
+entity_type: comment
+bundle: article_comment
+label: 'LEAVE A REPLY'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

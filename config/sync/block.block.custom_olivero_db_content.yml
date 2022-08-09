@@ -1,6 +1,6 @@
 uuid: 1cbb380c-3e86-42c4-a6f2-6e7d80d01150
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
@@ -19,4 +19,8 @@ settings:
   label: 'Main page content'
   label_display: '0'
   provider: system
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/node/*'

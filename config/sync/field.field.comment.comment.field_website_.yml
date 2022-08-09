@@ -1,0 +1,23 @@
+uuid: 931f8276-0f8a-4339-a9c3-8fff02727b47
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+    - field.storage.comment.field_website_
+  module:
+    - link
+id: comment.comment.field_website_
+field_name: field_website_
+entity_type: comment
+bundle: comment
+label: 'Website:'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

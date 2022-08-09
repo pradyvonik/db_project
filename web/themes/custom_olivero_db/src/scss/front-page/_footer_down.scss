@@ -51,11 +51,6 @@
             }
           }
 
-          @include bp-up('desktop') {
-            max-height: 290px;
-            max-width: 290px;
-          }
-
           .views-field-field-footer-row-picture {
 
             .field-content {

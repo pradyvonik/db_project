@@ -2,13 +2,16 @@
 
 .wrapper {
   margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
 
   .wrapper-content {
     max-width: 1440px;
     margin: 0 auto;
   }
 
-  .container {
+  .container{
+    margin: 0 auto;
     color: black;
 
     .content-inner {
@@ -118,7 +121,6 @@ a {
       }
     }
   }
-
 
 }
 

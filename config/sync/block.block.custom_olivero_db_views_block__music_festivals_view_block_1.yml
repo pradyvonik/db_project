@@ -5,13 +5,14 @@ dependencies:
   config:
     - views.view.music_festivals_view
   module:
+    - system
     - views
   theme:
     - custom_olivero_db
 id: custom_olivero_db_views_block__music_festivals_view_block_1
 theme: custom_olivero_db
 region: content_down
-weight: -19
+weight: -20
 provider: null
 plugin: 'views_block:music_festivals_view-block_1'
 settings:
@@ -21,4 +22,8 @@ settings:
   provider: views
   views_label: ''
   items_per_page: none
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

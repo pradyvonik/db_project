@@ -469,7 +469,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: false
-          content: "<span class=\"header\">You might also like</span>\r\n\r\n<span class=\"recommended\">Recommended to you</span>"
+          content: "<div class=\"title-top\">RELATED</div>\r\n\r\n<div class=\"main-title\">You might also like</div>\r\n\r\n<div class=\"title-bottom\">Recommended to you</div>"
           tokenize: false
       footer: {  }
       display_extenders: {  }

@@ -38,7 +38,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -105,8 +105,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '{{ field_category }}  {{ created }}'
             make_link: false
             path: ''
             absolute: false
@@ -233,7 +233,7 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 150
+            max_length: 110
             word_boundary: true
             ellipsis: true
             more_link: false
@@ -272,7 +272,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 1
+          items_per_page: 4
       exposed_form:
         type: basic
         options:
@@ -439,8 +439,8 @@ display:
         options:
           default_field_elements: true
           inline:
-            field_category: field_category
-            created: created
+            title: title
+            body: body
           separator: ''
           hide_empty: false
       query:
@@ -486,7 +486,7 @@ display:
       pager:
         type: some
         options:
-          offset: 1
+          offset: 4
           items_per_page: 2
       sorts:
         created:
@@ -560,6 +560,7 @@ display:
       header: {  }
       display_extenders: {  }
       displays:
+        default: default
         block_1: block_1
       attachment_position: after
     cache_metadata:
@@ -762,6 +763,11 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 1
       sorts: {  }
       filters:
         status:

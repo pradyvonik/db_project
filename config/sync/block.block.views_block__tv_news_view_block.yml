@@ -5,13 +5,14 @@ dependencies:
   config:
     - views.view.tv_news_view
   module:
+    - system
     - views
   theme:
     - custom_olivero_db
 id: views_block__tv_news_view_block
 theme: custom_olivero_db
 region: right_sidebar
-weight: -18
+weight: -20
 provider: null
 plugin: 'views_block:tv_news_view-block_1'
 settings:
@@ -21,4 +22,8 @@ settings:
   provider: views
   views_label: ''
   items_per_page: none
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_display.comment.comment.default
     - field.field.node.article.body
     - field.field.node.article.comment
+    - field.field.node.article.field_article_paragraphs
     - field.field.node.article.field_category
     - field.field.node.article.field_editorial
     - field.field.node.article.field_heading_image
@@ -13,6 +14,7 @@ dependencies:
     - node.type.article
   module:
     - comment
+    - entity_reference_revisions
     - image
     - layout_builder
     - text
@@ -43,6 +45,15 @@ content:
       pager_id: 0
     third_party_settings: {  }
     weight: 5
+    region: content
+  field_article_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_category:
     type: entity_reference_label

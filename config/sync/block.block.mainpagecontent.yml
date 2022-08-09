@@ -1,0 +1,24 @@
+uuid: 60ca8cf5-9261-4ef8-8938-28e8971e3c26
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - custom_olivero_db
+id: mainpagecontent
+theme: custom_olivero_db
+region: content_top
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/node/*'

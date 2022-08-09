@@ -1,0 +1,29 @@
+uuid: 38be399d-40e1-44d1-a560-01b580c5a2df
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sidebar_latest_news
+  module:
+    - system
+    - views
+  theme:
+    - custom_olivero_db
+id: views_block__sidebar_latest_news
+theme: custom_olivero_db
+region: right_sidebar
+weight: -18
+provider: null
+plugin: 'views_block:sidebar_latest_news-block_1'
+settings:
+  id: 'views_block:sidebar_latest_news-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'
