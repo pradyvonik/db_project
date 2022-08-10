@@ -1,0 +1,7 @@
+name: Text with image behavior
+type: module
+description: Behavior module for the content with paragraphs
+package: Custom
+core_version_requirement: ^9 || ^10
+dependencies:
+  - Drupal:paragraphs

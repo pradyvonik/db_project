@@ -20,5 +20,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    negate: false
-    pages: '/node/*'
+    negate: true
+    pages: '<front>'
