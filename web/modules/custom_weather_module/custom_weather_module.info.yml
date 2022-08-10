@@ -1,0 +1,5 @@
+name: Custom weather module
+type: module
+description: Test weather module with a block
+package: Custom
+core_version_requirement: ^9 || ^10
