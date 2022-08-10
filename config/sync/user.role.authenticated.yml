@@ -13,6 +13,7 @@ dependencies:
     - filter
     - media
     - node
+    - paragraphs
     - search
     - shortcut
     - system
@@ -35,3 +36,4 @@ permissions:
   - 'use text format basic_html'
   - 'use text format full_html'
   - 'view media'
+  - 'view unpublished paragraphs'

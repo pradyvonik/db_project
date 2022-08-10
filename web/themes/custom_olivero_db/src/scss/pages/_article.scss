@@ -102,7 +102,7 @@
     }
 
 
-    .article_body, .article-tags, .layout--content-narrow {
+    .article_body, .article-tags, .layout--content-narrow, .paragraph-content {
       display: none;
     }
   }
@@ -205,6 +205,35 @@
     }
   }
 
+}
+
+//paragraph
+.paragraph-content {
+  .field__label {
+    display: none;
+  }
+
+  .image-position--left,
+  .image-position--right {
+    .field--name-field-article-image{
+      flex-shrink: 0;
+      margin-right: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    .field--name-field-text{
+      font-family: "Merriweather", serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.74;
+    }
+  }
+
+  .image-position--right {
+    .field--name-field-article-image {
+      float: right;
+    }
+  }
 }
 
 //sidebar

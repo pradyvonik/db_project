@@ -3,31 +3,26 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.text_with_image.field_align_settings
     - field.field.paragraph.text_with_image.field_article_image
     - field.field.paragraph.text_with_image.field_article_text
+    - field.field.paragraph.text_with_image.field_article_title
     - paragraphs.paragraphs_type.text_with_image
   module:
-    - options
+    - media
     - text
 id: paragraph.text_with_image.default
 targetEntityType: paragraph
 bundle: text_with_image
 mode: default
 content:
-  field_align_settings:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_article_image:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     label: above
     settings:
-      view_mode: default
-      link: false
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
@@ -37,5 +32,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_article_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden: {  }

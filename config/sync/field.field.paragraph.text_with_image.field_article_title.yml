@@ -1,21 +1,21 @@
-uuid: 0f9ef70c-b890-4f72-a877-23fbd8cd9130
+uuid: ca07b529-2f04-414d-8abd-5785018cb530
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_align_settings
+    - field.storage.paragraph.field_article_title
     - paragraphs.paragraphs_type.text_with_image
   module:
-    - options
-id: paragraph.text_with_image.field_align_settings
-field_name: field_align_settings
+    - text
+id: paragraph.text_with_image.field_article_title
+field_name: field_article_title
 entity_type: paragraph
 bundle: text_with_image
-label: 'Align settings'
+label: 'Article title'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: list_string
+field_type: text
