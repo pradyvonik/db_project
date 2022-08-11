@@ -8,8 +8,8 @@ dependencies:
     - custom_olivero_db
 id: customweatherblock
 theme: custom_olivero_db
-region: primary_menu
-weight: 0
+region: right_sidebar
+weight: -23
 provider: null
 plugin: custom_weather_block
 settings:
