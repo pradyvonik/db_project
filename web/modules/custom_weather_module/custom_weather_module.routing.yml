@@ -1,0 +1,9 @@
+custom_weather_module.admin_settings:
+  path: '/admin/config/content/CWM'
+  defaults:
+    _form: '\Drupal\custom_weather_module\Form\CWMSettingsForm'
+    _title: 'Weather block settings'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE

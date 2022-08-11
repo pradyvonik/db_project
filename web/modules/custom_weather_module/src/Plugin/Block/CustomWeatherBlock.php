@@ -39,7 +39,7 @@ class CustomWeatherBlock extends BlockBase {
     $request = $client->get('http://ip-api.com/json/' . $user_ip);
     $response = json_decode($request->getBody(), TRUE);
     if ($response['status'] == 'success') {
-      $location = $response['city'] . "," . $response['country'];
+      $location = $response['city'] . ", " . $response['country'];
     }
     else {
       $location = 'Lutsk,Ukraine';
