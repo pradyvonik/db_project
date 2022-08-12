@@ -21,7 +21,11 @@ class CustomWeatherBlock extends BlockBase {
    */
   public function build() {
     return [
-      '#markup' => 'Your location is: ' . $this->userLocation() . '. The weather is: ' . $this->userWeather(),
+      '#theme' => 'weather_theme',
+      '#weather_header' => 'Weather now in ',
+      '#user_location' => $this->userLocation(),
+      '#conditions' => $this->userWeather(),
+      '#icon' => 'https://cdn.weatherapi.com/weather/64x64/day/113.png',
     ];
   }
 
