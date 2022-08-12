@@ -3,8 +3,10 @@
 namespace Drupal\custom_weather_module\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
+use GuzzleHttp\Exception\RequestException;
 use Symfony\Component\HttpFoundation\Request;
 use Drupal\Core\Form\FormStateInterface;
+use GuzzleHttp\Client;
 
 /**
  * Defines a form that gives a site needed data to get the weather info.
@@ -35,13 +37,13 @@ class CWMSettingsForm extends ConfigFormBase {
     $config = $this->config('custom_weather_module.settings');
     $form['admin_api_key'] = [
       '#type' => 'textfield',
-      '#title' => $this->t("Admin's API key for the weatherapi.com"),
+      '#title' => $this->t("Admin's API key for the weatherapi.com (format: 30-32 lowercase letters and numbers)"),
       '#default_value' => $config->get('api_key'),
       '#description' => $this->t('Input your API key to make the block work'),
     ];
     $form['admin_default_location'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Input default location for the weatherapi.com'),
+      '#title' => $this->t('Input default location for the weatherapi.com (format: City, Country)'),
       '#default_value' => $config->get('location'),
       '#description' => $this->t('Input default location to make the block work'),
     ];
@@ -64,13 +66,57 @@ class CWMSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    $values = $form_state->getValues();
-    $this->config('custom_weather_module.settings')
-      ->set('api_key', $values['admin_api_key'])
-      ->save();
-    if (!preg_match("/^[a-z0-9 ,]{1,32}$/", $form_state->getValue('admin_api_key'))) {
+    /*
+     * validating admin's api key for the weatherapi.com
+     */
+    if (!preg_match("/^[a-z0-9]{30,32}$/", $form_state->getValue('admin_api_key'))) {
       $form_state->setErrorByName('api_key', $this->t("The API key isn't correct. Please enter a valid one."));
     }
+    else {
+      try {
+        $this->validateKey($form_state->getValue('admin_api_key'));
+      }
+      catch (RequestException $e) {
+        $form_state->setErrorByName('api_key', $this->t("The API key isn't working."));
+      }
+    }
+
+    /*
+     * validating default city for the weatherapi.com compatibility
+     */
+    if (!preg_match("/^[a-zA-Z ,]{4,32}$/", $form_state->getValue('admin_default_location'))) {
+      $form_state->setErrorByName('location', $this->t("The default location is incorrect. Please enter a valid one."));
+    }
+    else {
+      try {
+        $this->validateLocation($form_state->getValue('admin_default_location'));
+      }
+      catch (RequestException $e) {
+        $form_state->setErrorByName('location', $this->t("The location is invalid."));
+      }
+    }
+  }
+
+  /*
+   * @TODO: rewrite validation in 1 method?
+   */
+
+  /**
+   * {@inheritdoc}
+   */
+  public function validateKey($api_key) {
+    $location = 'Lutsk, Ukraine';
+    $client = new Client();
+    $client->get('http://api.weatherapi.com/v1/current.json?key=' . $api_key . '&q=' . $location);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function validateLocation($location) {
+    $api_key = '1f5e3134f1dd43b9bfc150946221008';
+    $client = new Client();
+    $client->get('http://api.weatherapi.com/v1/current.json?key=' . $api_key . '&q=' . $location);
   }
 
 }
