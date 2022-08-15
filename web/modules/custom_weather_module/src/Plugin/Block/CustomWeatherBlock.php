@@ -46,7 +46,10 @@ class CustomWeatherBlock extends BlockBase {
       $location = $response['city'] . ", " . $response['country'];
     }
     else {
-      $location = 'Lutsk,Ukraine';
+      // $location = \Drupal::config('custom_weather_module.settings')
+      // ->get('location');
+      // @todo rewrite $location request with dependency injection
+      $location = 'Lutsk, Ukraine';
     }
     return $location;
   }
@@ -55,6 +58,9 @@ class CustomWeatherBlock extends BlockBase {
    * Private function that gets weather info from weatherapi.com.
    */
   private function userWeather() {
+    // $api_key = \Drupal::config('custom_weather_module.settings')
+    // ->get('api_key');
+    // @todo rewrite $api_key request with dependency injection
     $api_key = '1f5e3134f1dd43b9bfc150946221008';
     $location = $this->userLocation();
     $client = new Client();

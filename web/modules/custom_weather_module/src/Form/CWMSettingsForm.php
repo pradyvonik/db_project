@@ -73,12 +73,14 @@ class CWMSettingsForm extends ConfigFormBase {
       $form_state->setErrorByName('api_key', $this->t("The API key isn't correct. Please enter a valid one."));
     }
     else {
-      try {
-        $this->validateKey($form_state->getValue('admin_api_key'));
-      }
-      catch (RequestException $e) {
+      if ($this->validateKey($form_state->getValue('admin_api_key')) != '200') {
         $form_state->setErrorByName('api_key', $this->t("The API key isn't working."));
       }
+      else {
+        if ($this->validateLocation($form_state->getValue('admin_default_location'), $form_state->getValue('admin_api_key')) != '200') {
+          $form_state->setErrorByName('location', $this->t("Invalid location"));
+        };
+      };
     }
 
     /*
@@ -86,14 +88,6 @@ class CWMSettingsForm extends ConfigFormBase {
      */
     if (!preg_match("/^[a-zA-Z ,]{4,32}$/", $form_state->getValue('admin_default_location'))) {
       $form_state->setErrorByName('location', $this->t("The default location is incorrect. Please enter a valid one."));
-    }
-    else {
-      try {
-        $this->validateLocation($form_state->getValue('admin_default_location'));
-      }
-      catch (RequestException $e) {
-        $form_state->setErrorByName('location', $this->t("The location is invalid."));
-      }
     }
   }
 
@@ -107,16 +101,27 @@ class CWMSettingsForm extends ConfigFormBase {
   public function validateKey($api_key) {
     $location = 'Lutsk, Ukraine';
     $client = new Client();
-    $client->get('http://api.weatherapi.com/v1/current.json?key=' . $api_key . '&q=' . $location);
+    try {
+      $request = $client->get('http://api.weatherapi.com/v1/current.json?key=' . $api_key . '&q=' . $location);
+      return json_decode($request->getStatusCode());
+    }
+    catch (RequestException $e) {
+      return "API Key isn't working";
+    }
   }
 
   /**
    * {@inheritdoc}
    */
-  public function validateLocation($location) {
-    $api_key = '1f5e3134f1dd43b9bfc150946221008';
+  public function validateLocation($location, $api_key) {
     $client = new Client();
-    $client->get('http://api.weatherapi.com/v1/current.json?key=' . $api_key . '&q=' . $location);
+    try {
+      $request = $client->get('http://api.weatherapi.com/v1/current.json?key=' . $api_key . '&q=' . $location);
+      return json_decode($request->getStatusCode());
+    }
+    catch (RequestException $e) {
+      return "Invalid location.";
+    }
   }
 
 }
