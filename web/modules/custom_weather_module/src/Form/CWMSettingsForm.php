@@ -103,7 +103,7 @@ class CWMSettingsForm extends ConfigFormBase {
     $client = new Client();
     try {
       $request = $client->get('http://api.weatherapi.com/v1/current.json?key=' . $api_key . '&q=' . $location);
-      return json_decode($request->getStatusCode());
+      return $request->getStatusCode();
     }
     catch (RequestException $e) {
       return "API Key isn't working";
@@ -117,7 +117,7 @@ class CWMSettingsForm extends ConfigFormBase {
     $client = new Client();
     try {
       $request = $client->get('http://api.weatherapi.com/v1/current.json?key=' . $api_key . '&q=' . $location);
-      return json_decode($request->getStatusCode());
+      return $request->getStatusCode();
     }
     catch (RequestException $e) {
       return "Invalid location.";
