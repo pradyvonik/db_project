@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Weather Theme implementation to display Costom Weather Module block.
+ *
+ * Available variables:
+ * - weather-header: header showed in a block;
+ * - user_location: user's location that should be calculated considering IP by userLocation() method
+ * of the CustomWeatherBlock class (includes city and country);
+ * - conditions: weather condition at user's city from weatherapi.com that should be calculated considering
+ * {{ user_location }} by userWeather() method of the CustomWeatherBlock class (includes temperature in
+ * Celsius degrees and text description);
+ *
+ * @see template_preprocess_node()
+ */
+#}
+
+<h5 class="weather-header"> {{ weather_header }}</h5>
+
+<div class="user_location">{{ user_location }} </div>
+
+<div class="conditions">{{ conditions }}</div>
+
+<div class="icon"><img src="{{ icon }}"></div>

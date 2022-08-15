@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * For a Custom Weather Block custom template.
+ */
+
+/**
+ * Returns theme name and variables.
+ */
+function custom_weather_module_theme() {
+  return [
+    'weather_theme' => [
+      'variables' => [
+        'weather_header' => '',
+        'user_location' => '',
+        'conditions' => '',
+        'icon' => '',
+      ],
+    ],
+  ];
+}

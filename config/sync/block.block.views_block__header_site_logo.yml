@@ -11,7 +11,7 @@ dependencies:
 id: views_block__header_site_logo
 theme: custom_olivero_db
 region: primary_menu
-weight: -21
+weight: -24
 provider: null
 plugin: 'views_block:footer_site_logo-block_1'
 settings:

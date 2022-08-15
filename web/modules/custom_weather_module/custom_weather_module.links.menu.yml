@@ -1,0 +1,6 @@
+custom_weather_module.admin_settings:
+  title: 'CWM Settings'
+  description: 'Set the API key and default city'
+  route_name: custom_weather_module.admin_settings
+  parent: system.admin_config_content
+  weight: 3
