@@ -17,6 +17,19 @@ use GuzzleHttp\Client;
 class CustomWeatherBlock extends BlockBase {
 
   /**
+   * {@inheritdoc}
+   */
+  public function defaultConfiguration() {
+    // @todo use dependency injection
+    // phpcs:ignore
+    $default_config = \Drupal::config('custom_weather_module.settings');
+    return [
+      'api_key' => $default_config->get('api_key'),
+      'location' => $default_config->get('location'),
+    ];
+  }
+
+  /**
    * {@inheritDoc}
    */
   public function build() {
@@ -38,18 +51,31 @@ class CustomWeatherBlock extends BlockBase {
     // 1. rewrite $user_ip request with dependency injection
     // 2. make the function get proper user IP that could be geo located
     // random IP from the Netherlands is being used down here
-    $user_ip = '50.7.93.84';
+    $user_ip = '0.0.0.0';
     $client = new Client();
     $request = $client->get('http://ip-api.com/json/' . $user_ip);
     $response = json_decode($request->getBody(), TRUE);
     if ($response['status'] == 'success') {
       $location = $response['city'] . ", " . $response['country'];
     }
+    // @todo use dependency injection
+    // phpcs:ignore
+    elseif (\Drupal::config('custom_weather_module.settings')
+      ->get('location')) {
+      // @todo use dependency injection
+      // phpcs:ignore
+      $location = \Drupal::config('custom_weather_module.settings')
+        ->get('location');
+    }
     else {
-      // $location = \Drupal::config('custom_weather_module.settings')
-      // ->get('location');
-      // @todo rewrite $location request with dependency injection
       $location = 'Lutsk, Ukraine';
+      // @todo use dependency injection
+      // phpcs:ignore
+      \Drupal::logger('custom_weather_module')->error('Default city is unset');
+      // @todo use dependency injection
+      // phpcs:ignore
+      // $this->config('custom_weather_module.settings')
+      // ->set('location', '')->save();
     }
     return $location;
   }
@@ -58,10 +84,23 @@ class CustomWeatherBlock extends BlockBase {
    * Private function that gets weather info from weatherapi.com.
    */
   private function userWeather() {
-    // $api_key = \Drupal::config('custom_weather_module.settings')
-    // ->get('api_key');
-    // @todo rewrite $api_key request with dependency injection
-    $api_key = '1f5e3134f1dd43b9bfc150946221008';
+    // @todo use dependency injection
+    // phpcs:ignore
+    if (\Drupal::config('custom_weather_module.settings')->get('api_key')) {
+      // @todo use dependency injection
+      // phpcs:ignore
+      $api_key = \Drupal::config('custom_weather_module.settings')->get('api_key');
+    }
+    else {
+      $api_key = '1f5e3134f1dd43b9bfc150946221008';
+      // @todo use dependency injection
+      // phpcs:ignore
+      \Drupal::logger('custom_weather_module')->error('API Key is unset');
+      // @todo use dependency injection
+      // phpcs:ignore
+      // $this->config('custom_weather_module.settings')
+      // ->set('api_key', '')->save();
+    }
     $location = $this->userLocation();
     $client = new Client();
     $request = $client->get('http://api.weatherapi.com/v1/current.json?key=' . $api_key . '&q=' . $location);
