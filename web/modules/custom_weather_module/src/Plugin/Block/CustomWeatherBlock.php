@@ -69,13 +69,6 @@ class CustomWeatherBlock extends BlockBase {
     }
     else {
       $location = 'Lutsk, Ukraine';
-      // @todo use dependency injection
-      // phpcs:ignore
-      \Drupal::logger('custom_weather_module')->error('Default city is unset');
-      // @todo use dependency injection
-      // phpcs:ignore
-      // $this->config('custom_weather_module.settings')
-      // ->set('location', '')->save();
     }
     return $location;
   }
@@ -93,13 +86,6 @@ class CustomWeatherBlock extends BlockBase {
     }
     else {
       $api_key = '1f5e3134f1dd43b9bfc150946221008';
-      // @todo use dependency injection
-      // phpcs:ignore
-      \Drupal::logger('custom_weather_module')->error('API Key is unset');
-      // @todo use dependency injection
-      // phpcs:ignore
-      // $this->config('custom_weather_module.settings')
-      // ->set('api_key', '')->save();
     }
     $location = $this->userLocation();
     $client = new Client();
