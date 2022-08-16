@@ -1,4 +1,4 @@
-uuid: cc9939bd-d69b-4582-acbc-777e18b278c9
+uuid: 92d81712-7501-4bbc-98da-73188704e23f
 langcode: en
 status: true
 dependencies:
@@ -17,4 +17,6 @@ settings:
   label: 'Custom weather block'
   label_display: '0'
   provider: custom_weather_module
+  api_key: ''
+  location: ''
 visibility: {  }
