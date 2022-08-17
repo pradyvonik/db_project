@@ -54,14 +54,24 @@ class CustomWeatherBlock extends BlockBase {
     // phpcs:ignore
     $user_ip = \Drupal::request()->getClientIp();
     $client = new Client();
-    $request = $client->get('http://ip-api.com/json/' . $user_ip);
-    $response = json_decode($request->getBody(), TRUE);
-    if ($response['status'] == 'success') {
-      $location = $response['city'] . ", " . $response['country'];
+    try {
+      $request = $client->get('http://ip-api.com/json/' . $user_ip);
+      $response = json_decode($request->getBody(), TRUE);
+      if ($response['status'] == 'success') {
+        $location = $response['city'] . ", " . $response['country'];
+      }
+    }
+    catch (RequestException $e) {
+      // @todo use dependency injection
+      // phpcs:ignore
+      \Drupal::logger('custom_weather_module')->error('Message from @module: @message', [
+        '@module' => 'custom_weather_module',
+        '@message' => "GuzzleHttp\Exception\ConnectException: cURL error 6: Could not resolve host: ip-api.com",
+      ]);
     }
     // @todo use dependency injection
     // phpcs:ignore
-    elseif (\Drupal::config('custom_weather_module.settings')
+    if (\Drupal::config('custom_weather_module.settings')
       ->get('location')) {
       // @todo use dependency injection
       // phpcs:ignore
@@ -103,7 +113,7 @@ class CustomWeatherBlock extends BlockBase {
       // phpcs:ignore
       \Drupal::logger('custom_weather_module')->error('Message from @module: @message', [
         '@module' => 'custom_weather_module',
-        '@message' => "GuzzleHttp\Exception\ConnectException: cURL error 6: Could not resolve host: ip-api.com",
+        '@message' => "GuzzleHttp\Exception\ConnectException: cURL error 6: Could not resolve host: weatherapi.com",
       ]);
     }
 
@@ -133,7 +143,7 @@ class CustomWeatherBlock extends BlockBase {
       ];
       // @todo use dependency injection
       // phpcs:ignore
-      \Drupal::cache()->set($cacheId, $data,time() + 100);
+      \Drupal::cache()->set($cacheId, $data,time() + 3600);
       return $this->getWeather();
     }
   }
