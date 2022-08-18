@@ -69,7 +69,7 @@ class CustomWeatherBlock extends BlockBase {
         '@module' => 'custom_weather_module',
         '@message' => "GuzzleHttp\Exception\ConnectException: cURL error 6: Could not resolve host: ip-api.com",
       ]);
-      return NULL;
+      $location = NULL;
     }
     // @todo use dependency injection
     // phpcs:ignore
@@ -78,9 +78,6 @@ class CustomWeatherBlock extends BlockBase {
       // @todo use dependency injection
       // phpcs:ignore
       $location = $set;
-    }
-    else {
-      $location = 'Lutsk, Ukraine';
     }
     return $location;
   }
