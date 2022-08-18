@@ -34,12 +34,13 @@ class CustomWeatherBlock extends BlockBase {
    * {@inheritDoc}
    */
   public function build() {
+    $weather = $this->userWeather();
     return [
       '#theme' => 'weather_theme',
       '#weather_header' => 'Weather now in ',
       '#user_location' => $this->userLocation() ?? '',
-      '#conditions' => $this->userWeather()['conditions'] ?? '',
-      '#icon' => $this->userWeather()['icon'] ?? '',
+      '#conditions' => $weather['conditions'] ?? '',
+      '#icon' => $weather['icon'] ?? '',
     ];
   }
 
@@ -72,12 +73,11 @@ class CustomWeatherBlock extends BlockBase {
     }
     // @todo use dependency injection
     // phpcs:ignore
-    if (\Drupal::config('custom_weather_module.settings')
+    if ($set = \Drupal::config('custom_weather_module.settings')
       ->get('location')) {
       // @todo use dependency injection
       // phpcs:ignore
-      $location = \Drupal::config('custom_weather_module.settings')
-        ->get('location');
+      $location = $set;
     }
     else {
       $location = 'Lutsk, Ukraine';
@@ -125,19 +125,17 @@ class CustomWeatherBlock extends BlockBase {
    * Private function that gets data from cache or sets it.
    */
   private function userWeather() {
-    $cacheId = 'weatherCache';
+    $cacheId = "weatherCache:{$this->userLocation()}";
     // @todo use dependency injection
     // phpcs:ignore
     $cache = \Drupal::cache()->get($cacheId);
     $weatherData = $this->getWeather();
     if ($cache
-      && ($cache->data['location'] === $this->userLocation())
       && ($cache->data['conditions'])) {
       return $cache->data;
     }
     else {
       $data = [
-        'location' => $this->userLocation(),
         'conditions' => $weatherData['conditions'],
         'icon' => $weatherData['icon'],
       ];
