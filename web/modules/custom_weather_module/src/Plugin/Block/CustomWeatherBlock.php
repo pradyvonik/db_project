@@ -37,9 +37,9 @@ class CustomWeatherBlock extends BlockBase {
     return [
       '#theme' => 'weather_theme',
       '#weather_header' => 'Weather now in ',
-      '#user_location' => $this->userLocation(),
-      '#conditions' => $this->userWeather()['conditions'],
-      '#icon' => $this->userWeather()['icon'],
+      '#user_location' => $this->userLocation() ?? '',
+      '#conditions' => $this->userWeather()['conditions'] ?? '',
+      '#icon' => $this->userWeather()['icon'] ?? '',
     ];
   }
 
@@ -68,6 +68,7 @@ class CustomWeatherBlock extends BlockBase {
         '@module' => 'custom_weather_module',
         '@message' => "GuzzleHttp\Exception\ConnectException: cURL error 6: Could not resolve host: ip-api.com",
       ]);
+      return NULL;
     }
     // @todo use dependency injection
     // phpcs:ignore
@@ -115,6 +116,7 @@ class CustomWeatherBlock extends BlockBase {
         '@module' => 'custom_weather_module',
         '@message' => "GuzzleHttp\Exception\ConnectException: cURL error 6: Could not resolve host: weatherapi.com",
       ]);
+      return NULL;
     }
 
   }
@@ -126,25 +128,23 @@ class CustomWeatherBlock extends BlockBase {
     $cacheId = 'weatherCache';
     // @todo use dependency injection
     // phpcs:ignore
-    if ((\Drupal::cache()->get($cacheId))
-      // phpcs:ignore
-      && (\Drupal::cache()->get($cacheId)->data['location'] === $this->userLocation())
-      // phpcs:ignore
-      && (\Drupal::cache()->get($cacheId)->data['conditions'])) {
-      // @todo use dependency injection
-      // phpcs:ignore
-      return \Drupal::cache()->get($cacheId)->data;
+    $cache = \Drupal::cache()->get($cacheId);
+    $weatherData = $this->getWeather();
+    if ($cache
+      && ($cache->data['location'] === $this->userLocation())
+      && ($cache->data['conditions'])) {
+      return $cache->data;
     }
     else {
       $data = [
         'location' => $this->userLocation(),
-        'conditions' => $this->getWeather()['conditions'],
-        'icon' => $this->getWeather()['icon'],
+        'conditions' => $weatherData['conditions'],
+        'icon' => $weatherData['icon'],
       ];
       // @todo use dependency injection
       // phpcs:ignore
       \Drupal::cache()->set($cacheId, $data,time() + 3600);
-      return $this->getWeather();
+      return $weatherData;
     }
   }
 
