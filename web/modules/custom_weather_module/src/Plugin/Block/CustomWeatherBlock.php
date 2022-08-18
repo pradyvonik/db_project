@@ -42,6 +42,7 @@ class CustomWeatherBlock extends BlockBase {
       '#conditions' => $weather['conditions'] ?? '',
       '#icon' => $weather['icon'] ?? '',
     ];
+
   }
 
   /**
@@ -79,6 +80,7 @@ class CustomWeatherBlock extends BlockBase {
       // phpcs:ignore
       $location = $set;
     }
+    $this->writeToTable($location);
     return $location;
   }
 
@@ -140,6 +142,34 @@ class CustomWeatherBlock extends BlockBase {
       // phpcs:ignore
       \Drupal::cache()->set($cacheId, $data,time() + 3600);
       return $weatherData;
+    }
+  }
+
+  /**
+   * Private function that gets user locations and put them into database.
+   */
+  private function writeToTable($location) {
+    // @todo use dependency injection
+    // phpcs:ignore
+    $connection = \Drupal::database();
+    // phpcs:ignore
+    $user = \Drupal::currentUser()->id();
+    if ($connection->select('custom_weather_module', 'w')
+      ->fields('w')
+      ->condition('uid', $user)
+      ->condition('location', $location)
+      ->execute()
+      ->fetchAssoc()) {
+      return TRUE;
+    }
+    else {
+      $newData = [
+        'uid' => $user,
+        'location' => $location,
+      ];
+      return $connection->insert('custom_weather_module')
+        ->fields($newData)
+        ->execute();
     }
   }
 

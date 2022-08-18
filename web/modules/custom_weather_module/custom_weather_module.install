@@ -12,19 +12,71 @@ function custom_weather_module_install() {
   // @todo use dependency injection
   // phpcs:ignore
   if (!\Drupal::config('custom_weather_module.settings')->get('api_key')) {
-    \Drupal::messenger()->addWarning("Add the Api key for weatherapi.com at /admin/config/content/CWM");
-    \Drupal::logger('custom_weather_module')->error('Message from @module: @message', [
-      '@module' => 'custom_weather_module',
-      '@message' => "The Api key for weatherapi.com isn't set. Please fill the data at /admin/config/content/CWM",
-    ]);
-    \Drupal::configFactory()->getEditable('custom_weather_module.settings')->set('api_key', '')->save();
+    \Drupal::messenger()
+      ->addWarning("Add the Api key for weatherapi.com at /admin/config/content/CWM");
+    \Drupal::logger('custom_weather_module')
+      ->error('Message from @module: @message', [
+        '@module' => 'custom_weather_module',
+        '@message' => "The Api key for weatherapi.com isn't set. Please fill the data at /admin/config/content/CWM",
+      ]);
+    \Drupal::configFactory()
+      ->getEditable('custom_weather_module.settings')
+      ->set('api_key', '')
+      ->save();
   }
   if (!\Drupal::config('custom_weather_module.settings')->get('location')) {
-    \Drupal::messenger()->addWarning("Add the default location for weatherapi.com at /admin/config/content/CWM");
-    \Drupal::logger('custom_weather_module')->error('Message from @module: @message', [
-      '@module' => 'custom_weather_module',
-      '@message' => "The default location isn't set. Please fill the data at /admin/config/content/CWM",
-    ]);
-    \Drupal::configFactory()->getEditable('custom_weather_module.settings')->set('location', '')->save();
+    \Drupal::messenger()
+      ->addWarning("Add the default location for weatherapi.com at /admin/config/content/CWM");
+    \Drupal::logger('custom_weather_module')
+      ->error('Message from @module: @message', [
+        '@module' => 'custom_weather_module',
+        '@message' => "The default location isn't set. Please fill the data at /admin/config/content/CWM",
+      ]);
+    \Drupal::configFactory()
+      ->getEditable('custom_weather_module.settings')
+      ->set('location', '')
+      ->save();
   }
+
+}
+
+/**
+ * Implements hook_schema().
+ *
+ * Defines the database tables used by this module.
+ *
+ * @see hook_schema()
+ *
+ * @ingroup custom_weather_module
+ */
+function custom_weather_module_schema() {
+  $schema['custom_weather_module'] = [
+    'description' => 'stores usernames and locations',
+    'fields' => [
+      'id' => [
+        'description' => 'Primary identifier',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'uid' => [
+        'description' => 'User id',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'location' => [
+        'description' => 'User location used for weather display',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'uid' => ['uid'],
+      'location' => ['location'],
+    ],
+  ];
+  return $schema;
 }
