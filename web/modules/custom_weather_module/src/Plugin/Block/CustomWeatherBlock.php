@@ -4,6 +4,7 @@ namespace Drupal\custom_weather_module\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 
 /**
  * Provides a "Custom weather module" block.
@@ -33,12 +34,13 @@ class CustomWeatherBlock extends BlockBase {
    * {@inheritDoc}
    */
   public function build() {
+    $weather = $this->userWeather();
     return [
       '#theme' => 'weather_theme',
       '#weather_header' => 'Weather now in ',
-      '#user_location' => $this->userLocation(),
-      '#conditions' => $this->userWeather(),
-      '#icon' => 'https://cdn.weatherapi.com/weather/64x64/day/113.png',
+      '#user_location' => $this->userLocation() ?? '',
+      '#conditions' => $weather['conditions'] ?? '',
+      '#icon' => $weather['icon'] ?? '',
     ];
   }
 
@@ -46,29 +48,36 @@ class CustomWeatherBlock extends BlockBase {
    * Private function for getting user IP.
    */
   private function userLocation() {
-    // $user_ip = \Drupal::request()->getClientIp();
     // @todo fix 2 problems here:
     // 1. rewrite $user_ip request with dependency injection
     // 2. make the function get proper user IP that could be geo located
     // random IP from the Netherlands is being used down here
-    $user_ip = '0.0.0.0';
+    // phpcs:ignore
+    $user_ip = \Drupal::request()->getClientIp();
     $client = new Client();
-    $request = $client->get('http://ip-api.com/json/' . $user_ip);
-    $response = json_decode($request->getBody(), TRUE);
-    if ($response['status'] == 'success') {
-      $location = $response['city'] . ", " . $response['country'];
+    try {
+      $request = $client->get('http://ip-api.com/json/' . $user_ip);
+      $response = json_decode($request->getBody(), TRUE);
+      if ($response['status'] == 'success') {
+        $location = $response['city'] . ", " . $response['country'];
+      }
+    }
+    catch (RequestException $e) {
+      // @todo use dependency injection
+      // phpcs:ignore
+      \Drupal::logger('custom_weather_module')->error('Message from @module: @message', [
+        '@module' => 'custom_weather_module',
+        '@message' => "GuzzleHttp\Exception\ConnectException: cURL error 6: Could not resolve host: ip-api.com",
+      ]);
+      $location = NULL;
     }
     // @todo use dependency injection
     // phpcs:ignore
-    elseif (\Drupal::config('custom_weather_module.settings')
+    if ($set = \Drupal::config('custom_weather_module.settings')
       ->get('location')) {
       // @todo use dependency injection
       // phpcs:ignore
-      $location = \Drupal::config('custom_weather_module.settings')
-        ->get('location');
-    }
-    else {
-      $location = 'Lutsk, Ukraine';
+      $location = $set;
     }
     return $location;
   }
@@ -76,7 +85,7 @@ class CustomWeatherBlock extends BlockBase {
   /**
    * Private function that gets weather info from weatherapi.com.
    */
-  private function userWeather() {
+  private function getWeather() {
     // @todo use dependency injection
     // phpcs:ignore
     if (\Drupal::config('custom_weather_module.settings')->get('api_key')) {
@@ -89,9 +98,49 @@ class CustomWeatherBlock extends BlockBase {
     }
     $location = $this->userLocation();
     $client = new Client();
-    $request = $client->get('http://api.weatherapi.com/v1/current.json?key=' . $api_key . '&q=' . $location);
-    $response = json_decode($request->getBody(), TRUE);
-    return $response['current']['temp_c'] . ' °C, ' . $response['current']['condition']['text'];
+    try {
+      $request = $client->get('http://api.weatherapi.com/v1/current.json?key=' . $api_key . '&q=' . $location);
+      $response = json_decode($request->getBody(), TRUE);
+      return [
+        'conditions' => $response['current']['temp_c'] . ' °C, ' . $response['current']['condition']['text'],
+        'icon' => $response['current']['condition']['icon'],
+      ];
+    }
+    catch (RequestException $e) {
+      // @todo use dependency injection
+      // phpcs:ignore
+      \Drupal::logger('custom_weather_module')->error('Message from @module: @message', [
+        '@module' => 'custom_weather_module',
+        '@message' => "GuzzleHttp\Exception\ConnectException: cURL error 6: Could not resolve host: weatherapi.com",
+      ]);
+      return NULL;
+    }
+
+  }
+
+  /**
+   * Private function that gets data from cache or sets it.
+   */
+  private function userWeather() {
+    $cacheId = "weatherCache:{$this->userLocation()}";
+    // @todo use dependency injection
+    // phpcs:ignore
+    $cache = \Drupal::cache()->get($cacheId);
+    $weatherData = $this->getWeather();
+    if ($cache
+      && ($cache->data['conditions'])) {
+      return $cache->data;
+    }
+    else {
+      $data = [
+        'conditions' => $weatherData['conditions'],
+        'icon' => $weatherData['icon'],
+      ];
+      // @todo use dependency injection
+      // phpcs:ignore
+      \Drupal::cache()->set($cacheId, $data,time() + 3600);
+      return $weatherData;
+    }
   }
 
 }
