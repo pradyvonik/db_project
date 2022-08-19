@@ -35,12 +35,15 @@ class CustomWeatherBlock extends BlockBase {
    */
   public function build() {
     $weather = $this->userWeather();
+    $location = $this->userLocation();
+    $result = $this->getLocationStat();
     return [
       '#theme' => 'weather_theme',
-      '#weather_header' => 'Weather now in ',
-      '#user_location' => $this->userLocation() ?? '',
+      '#weather_header' => 'Actual weather:',
+      '#user_location' => $location ?? '',
       '#conditions' => $weather['conditions'] ?? '',
       '#icon' => $weather['icon'] ?? '',
+      '#statistics' => $result ?? '',
     ];
 
   }
@@ -80,7 +83,7 @@ class CustomWeatherBlock extends BlockBase {
       // phpcs:ignore
       $location = $set;
     }
-    $this->writeToTable($location);
+    $this->writeToTableUsers($location);
     return $location;
   }
 
@@ -148,13 +151,13 @@ class CustomWeatherBlock extends BlockBase {
   /**
    * Private function that gets user locations and put them into database.
    */
-  private function writeToTable($location) {
+  private function writeToTableUsers($location) {
     // @todo use dependency injection
     // phpcs:ignore
     $connection = \Drupal::database();
     // phpcs:ignore
     $user = \Drupal::currentUser()->id();
-    if ($connection->select('custom_weather_module', 'w')
+    if ($connection->select('weather_users_and_locations', 'w')
       ->fields('w')
       ->condition('uid', $user)
       ->condition('location', $location)
@@ -167,10 +170,57 @@ class CustomWeatherBlock extends BlockBase {
         'uid' => $user,
         'location' => $location,
       ];
-      return $connection->insert('custom_weather_module')
+      return $connection->insert('weather_users_and_locations')
         ->fields($newData)
         ->execute();
     }
+  }
+
+  /**
+   * Private function that counts users by locations.
+   */
+  private function uniqueLocations() {
+    $result = [];
+    // @todo use dependency injection
+    // phpcs:ignore
+    $connection = \Drupal::database();
+    $locations = $connection->select('weather_users_and_locations', 'w')
+      ->fields('w', ['location'])
+      ->execute()
+      ->fetchCol();
+    foreach ($locations as $location) {
+      if (!in_array($location, $result)) {
+        $result[] = $location;
+      }
+    }
+    return $result;
+  }
+
+  /**
+   * Private function that counts users by locations.
+   */
+  private function getLocationStat() {
+    $result = [];
+    $locations = $this->uniqueLocations();
+    // @todo use dependency injection
+    // phpcs:ignore
+    $connection = \Drupal::database();
+    foreach ($locations as $location) {
+      $count = $connection->select('weather_users_and_locations', 'w')
+        ->fields('w')
+        ->condition('location', $location)
+        ->countQuery()
+        ->execute()
+        ->fetchField();
+      $result[$location] = $count;
+    }
+    $printed = '';
+    arsort($result);
+    array_splice($result, 5);
+    foreach ($result as $key => $value) {
+      $printed .= $key . ' ' . $value . '<br>';
+    }
+    return $printed;
   }
 
 }

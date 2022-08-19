@@ -16,6 +16,7 @@ function custom_weather_module_theme() {
         'user_location' => '',
         'conditions' => '',
         'icon' => '',
+        'statistics' => '',
       ],
     ],
   ];

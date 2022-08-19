@@ -50,7 +50,7 @@ function custom_weather_module_install() {
  * @ingroup custom_weather_module
  */
 function custom_weather_module_schema() {
-  $schema['custom_weather_module'] = [
+  $schema['weather_users_and_locations'] = [
     'description' => 'stores usernames and locations',
     'fields' => [
       'id' => [
