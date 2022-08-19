@@ -12,7 +12,7 @@ dependencies:
 id: custom_olivero_db_views_block__latest_news_view_block_1
 theme: custom_olivero_db
 region: left_sidebar
-weight: -22
+weight: -21
 provider: null
 plugin: 'views_block:latest_news_view-block_1'
 settings:

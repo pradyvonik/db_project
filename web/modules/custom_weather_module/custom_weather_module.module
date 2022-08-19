@@ -12,11 +12,17 @@ function custom_weather_module_theme() {
   return [
     'weather_theme' => [
       'variables' => [
-        'weather_header' => '',
+        'header' => '',
         'user_location' => '',
         'conditions' => '',
         'icon' => '',
         'statistics' => '',
+      ],
+    ],
+    'statistics_theme' => [
+      'variables' => [
+        'header' => '',
+        'table' => '',
       ],
     ],
   ];

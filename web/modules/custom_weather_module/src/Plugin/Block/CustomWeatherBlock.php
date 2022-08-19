@@ -39,7 +39,7 @@ class CustomWeatherBlock extends BlockBase {
     $result = $this->getLocationStat();
     return [
       '#theme' => 'weather_theme',
-      '#weather_header' => 'Actual weather:',
+      '#header' => 'Actual weather:',
       '#user_location' => $location ?? '',
       '#conditions' => $weather['conditions'] ?? '',
       '#icon' => $weather['icon'] ?? '',
