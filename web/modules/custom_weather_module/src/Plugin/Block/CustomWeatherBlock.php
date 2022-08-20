@@ -4,7 +4,6 @@ namespace Drupal\custom_weather_module\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\CacheBackendInterface;
-use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -27,53 +26,79 @@ use Symfony\Component\HttpFoundation\Request;
 class CustomWeatherBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
+   * Returns config file.
+   *
    * @var \Drupal\Core\Config\ImmutableConfig
    */
   protected $config;
 
   /**
+   * Returns database.
+   *
    * @var \Drupal\Core\Database\Connection
    */
   protected $database;
 
   /**
+   * Returns current user.
+   *
    * @var \Drupal\Core\Session\AccountProxyInterface
    */
   protected $currentUser;
 
   /**
+   * Makes http request.
+   *
    * @var \Symfony\Component\HttpFoundation\Request
    */
   protected $request;
 
   /**
+   * Returns cache.
+   *
    * @var \Drupal\Core\Cache\CacheBackendInterface
    */
   protected $cache;
 
   /**
+   * Logs error messages.
+   *
    * @var \Psr\Log\LoggerInterface
    */
   protected $logger;
 
   /**
+   * Parameters for the __construct method.
+   *
+   * @param array $configuration
+   *   Standard parameter.
+   * @param string $plugin_id
+   *   Standard parameter.
+   * @param string $plugin_definition
+   *   Standard parameter.
    * @param \Drupal\Core\Config\ImmutableConfig $config
+   *   Config.
    * @param \Drupal\Core\Database\Connection $database
+   *   Database.
    * @param \Drupal\Core\Session\AccountProxyInterface $currentUser
+   *   Current user.
    * @param \Symfony\Component\HttpFoundation\Request $request
+   *   Request.
    * @param \Drupal\Core\Cache\CacheBackendInterface $cache
+   *   Cache.
    * @param \Psr\Log\LoggerInterface $logger
+   *   Cache.
    */
   public function __construct(array $configuration,
                               $plugin_id,
                               $plugin_definition,
-                              ConfigFactoryInterface $config_factory,
+                              ImmutableConfig $config,
                               Connection $database,
                               AccountProxyInterface $currentUser,
                               Request $request,
                               CacheBackendInterface $cache,
   LoggerInterface $logger) {
-    $this->config = $config_factory->get('custom_weather_module.settings');
+    $this->config = $config;
     $this->database = $database;
     $this->currentUser = $currentUser;
     $this->request = $request;
@@ -90,7 +115,7 @@ class CustomWeatherBlock extends BlockBase implements ContainerFactoryPluginInte
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('config.factory'),
+      $container->get('config.factory')->get('custom_weather_module.settings'),
       $container->get('database'),
       $container->get('current_user'),
       $container->get('request_stack')->getCurrentRequest(),

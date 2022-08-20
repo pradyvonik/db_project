@@ -19,12 +19,23 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class StatisticsBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
+   * Returns database.
+   *
    * @var \Drupal\Core\Database\Connection
    */
   protected $database;
 
   /**
+   * Parameters for the __construct method.
+   *
+   * @param array $configuration
+   *   Standard parameter.
+   * @param string $plugin_id
+   *   Standard parameter.
+   * @param string $plugin_definition
+   *   Standard parameter.
    * @param \Drupal\Core\Database\Connection $database
+   *   Database.
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, Connection $database) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
