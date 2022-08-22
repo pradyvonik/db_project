@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - custom_weather_module
+    - user
   theme:
     - custom_olivero_db
 id: locationstatisticsblock
@@ -19,4 +20,11 @@ settings:
   provider: custom_weather_module
   api_key: 1f5e3134f1dd43b9bfc150946221008
   location: Lviv
-visibility: {  }
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
