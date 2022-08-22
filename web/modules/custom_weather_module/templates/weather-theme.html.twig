@@ -15,10 +15,12 @@
  */
 #}
 
-<h5 class="weather-header"> {{ weather_header }}</h5>
+<h5 class="header"> {{ header }}</h5>
 
 <div class="user_location">{{ user_location }} </div>
 
 <div class="conditions">{{ conditions }}</div>
 
 <div class="icon"><img src="{{ icon }}"></div>
+
+<div class="statistics">{{ statistics|raw }}</div>

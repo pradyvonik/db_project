@@ -1,4 +1,4 @@
-uuid: 92d81712-7501-4bbc-98da-73188704e23f
+uuid: c1e6ae84-19c0-4cf4-aa8f-3c90d7294262
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
     - custom_olivero_db
 id: customweatherblock
 theme: custom_olivero_db
-region: right_sidebar
+region: left_sidebar
 weight: -23
 provider: null
 plugin: custom_weather_block

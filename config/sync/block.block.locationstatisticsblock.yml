@@ -1,0 +1,30 @@
+uuid: cbf9835b-e338-4d3e-bd80-c89051fe84af
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_weather_module
+    - user
+  theme:
+    - custom_olivero_db
+id: locationstatisticsblock
+theme: custom_olivero_db
+region: left_sidebar
+weight: -22
+provider: null
+plugin: location_statistics
+settings:
+  id: location_statistics
+  label: 'Location statistics block'
+  label_display: '0'
+  provider: custom_weather_module
+  api_key: 1f5e3134f1dd43b9bfc150946221008
+  location: Lviv
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
