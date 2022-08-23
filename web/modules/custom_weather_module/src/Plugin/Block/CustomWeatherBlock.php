@@ -89,15 +89,17 @@ class CustomWeatherBlock extends BlockBase implements ContainerFactoryPluginInte
    * @param \Psr\Log\LoggerInterface $logger
    *   Cache.
    */
-  public function __construct(array $configuration,
-                              $plugin_id,
-                              $plugin_definition,
-                              ImmutableConfig $config,
-                              Connection $database,
-                              AccountProxyInterface $currentUser,
-                              Request $request,
-                              CacheBackendInterface $cache,
-  LoggerInterface $logger) {
+  public function __construct(
+    array $configuration,
+          $plugin_id,
+          $plugin_definition,
+    ImmutableConfig $config,
+    Connection $database,
+    AccountProxyInterface $currentUser,
+    Request $request,
+    CacheBackendInterface $cache,
+    LoggerInterface $logger
+  ) {
     $this->config = $config;
     $this->database = $database;
     $this->currentUser = $currentUser;
