@@ -24,6 +24,7 @@
         "drupal/core-recommended": "^9.4",
         "drupal/devel": "^4.1",
         "drupal/paragraphs": "^1.14",
+        "drupal/pathauto": "^1.11",
         "drush/drush": "^11.0",
         "vlucas/phpdotenv": "^5.1",
         "webflo/drupal-finder": "^1.2"
