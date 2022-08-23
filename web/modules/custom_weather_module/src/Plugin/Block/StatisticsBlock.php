@@ -136,6 +136,7 @@ class StatisticsBlock extends BlockBase implements ContainerFactoryPluginInterfa
     $results = $query->execute()->fetchAll();
     $locations = $this->topLocations();
     $counter = 1;
+    $printed = '';
     foreach ($locations as $location) {
       $printed .= '<br>' . $counter++ . ". " . $location . ': ';
       $links = [];
