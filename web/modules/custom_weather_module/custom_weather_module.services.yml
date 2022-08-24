@@ -1,0 +1,9 @@
+services:
+  custom_weather_module.get_data:
+    class: Drupal\custom_weather_module\WeatherData
+    arguments: ['@config.factory',
+                '@database',
+                '@current_user',
+                '@request_stack',
+                '@cache.default',
+                '@logger.factory']
