@@ -2,7 +2,6 @@
 
 namespace Drupal\custom_weather_module;
 
-use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Session\AccountProxyInterface;
@@ -46,16 +45,9 @@ class WeatherData {
   protected $request;
 
   /**
-   * Returns cache.
-   *
-   * @var \Drupal\Core\Cache\CacheBackendInterface
-   */
-  protected $cache;
-
-  /**
    * Logs error messages.
    *
-   * @var Drupal\Core\Logger\LoggerChannelFactory
+   * @var \Drupal\Core\Logger\LoggerChannelFactory
    */
   protected $logger;
 
@@ -70,9 +62,7 @@ class WeatherData {
    *   Current user.
    * @param \Symfony\Component\HttpFoundation\RequestStack $request
    *   Request.
-   * @param \Drupal\Core\Cache\CacheBackendInterface $cache
-   *   Cache.
-   * @param Drupal\Core\Logger\LoggerChannelFactory $logger
+   * @param \Drupal\Core\Logger\LoggerChannelFactory $logger
    *   Cache.
    */
   public function __construct(
@@ -80,14 +70,12 @@ class WeatherData {
     Connection $database,
     AccountProxyInterface $currentUser,
     RequestStack $request,
-    CacheBackendInterface $cache,
     LoggerChannelFactory $logger
   ) {
     $this->config = $config->get('custom_weather_module.settings');
     $this->database = $database;
     $this->currentUser = $currentUser;
     $this->request = $request->getCurrentRequest();
-    $this->cache = $cache;
     $this->logger = $logger->get('custom_weather_module');
   }
 
@@ -100,7 +88,6 @@ class WeatherData {
       $container->get('database'),
       $container->get('current_user'),
       $container->get('request_stack'),
-      $container->get('cache.default'),
       $container->get('logger.factory'),
     );
   }
@@ -171,27 +158,6 @@ class WeatherData {
       return NULL;
     }
 
-  }
-
-  /**
-   * Private function that gets data from cache or sets it.
-   */
-  public function userWeather() {
-    $cacheId = "weatherCache:{$this->userLocation()}";
-    $cache = $this->cache->get($cacheId);
-    $weatherData = $this->getWeather();
-    if ($cache
-      && ($cache->data['conditions'])) {
-      return $cache->data;
-    }
-    else {
-      $data = [
-        'conditions' => $weatherData['conditions'],
-        'icon' => $weatherData['icon'],
-      ];
-      $this->cache->set($cacheId, $data, time() + 3600);
-      return $weatherData;
-    }
   }
 
   /**

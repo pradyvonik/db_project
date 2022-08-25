@@ -5,5 +5,9 @@ services:
                 '@database',
                 '@current_user',
                 '@request_stack',
-                '@cache.default',
                 '@logger.factory']
+  cache_context.location:
+    class: Drupal\custom_weather_module\LocationCacheContext
+    arguments: ['@custom_weather_module.get_data']
+    tags:
+      - { name: cache.context }

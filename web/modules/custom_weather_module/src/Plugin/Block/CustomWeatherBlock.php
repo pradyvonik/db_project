@@ -54,14 +54,20 @@ class CustomWeatherBlock extends BlockBase implements ContainerFactoryPluginInte
    * {@inheritDoc}
    */
   public function build() {
-    $weather = $this->data->userWeather();
+    $weather = $this->data->getWeather();
     $location = $this->data->userLocation();
+    // $number is used to check if cache works properly.
+    $number = rand(0, 100);
     return [
       '#theme' => 'weather_theme',
-      '#header' => 'Actual weather:',
+      '#header' => 'Actual weather:' . $number,
       '#user_location' => $location ?? '',
       '#conditions' => $weather['conditions'] ?? '',
       '#icon' => $weather['icon'] ?? '',
+      '#cache' => [
+        'contexts' => ['location'],
+        'max-age' => 3600,
+      ],
     ];
   }
 
