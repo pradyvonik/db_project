@@ -4,8 +4,7 @@ const miniCss = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: {
-    dscss: ["./src/index.js"],
-    javascript: ["./src/Drupal.js"]
+    javascript: ["./src/index.js"]
   },
   output: {
     filename: "[name].js",
