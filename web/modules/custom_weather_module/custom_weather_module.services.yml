@@ -1,0 +1,13 @@
+services:
+  custom_weather_module.get_data:
+    class: Drupal\custom_weather_module\WeatherData
+    arguments: ['@config.factory',
+                '@database',
+                '@current_user',
+                '@request_stack',
+                '@logger.factory']
+  cache_context.location:
+    class: Drupal\custom_weather_module\LocationCacheContext
+    arguments: ['@custom_weather_module.get_data', '@request_stack']
+    tags:
+      - { name: cache.context }

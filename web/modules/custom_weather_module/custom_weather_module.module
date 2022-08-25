@@ -19,11 +19,5 @@ function custom_weather_module_theme() {
         'statistics' => '',
       ],
     ],
-    'statistics_theme' => [
-      'variables' => [
-        'header' => '',
-        'table' => '',
-      ],
-    ],
   ];
 }

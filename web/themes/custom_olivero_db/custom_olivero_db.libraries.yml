@@ -4,7 +4,7 @@ global:
     base:
       dist/style.css: {}
   js:
-    dist/javascript.js: {}
+    dist/javascript.js: { preprocess: false }
   dependencies:
     - core/drupal
     - core/jquery
