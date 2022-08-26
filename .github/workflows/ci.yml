@@ -9,7 +9,7 @@ env:
 
 jobs:
   build:
-    runs-on: 'ubuntu-20.04'
+    runs-on: 'ubuntu-22.04'
     strategy:
       fail-fast: false
       matrix:
@@ -55,8 +55,6 @@ jobs:
 
       - if: matrix.drupal-release == 'dev'
         run: composer --verbose update
-
-      - run: ./vendor/bin/drush site-install --verbose --yes --db-url=sqlite://tmp/site.sqlite
 
       - run: ./vendor/bin/drush runserver $SIMPLETEST_BASE_URL &
 

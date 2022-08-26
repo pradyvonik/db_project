@@ -1,0 +1,21 @@
+uuid: 2d0ceb52-5f6a-43e7-b202-b8dd14896d7c
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_ip_address
+field_name: field_ip_address
+entity_type: user
+type: string
+settings:
+  max_length: 15
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

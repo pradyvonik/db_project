@@ -1,0 +1,33 @@
+id: migrate_csv_users
+label: 'Migrate users from the csv file'
+migration_group: migration
+source:
+  plugin: csv
+  path: '/modules/custom_migrate_csv/assets/csv/bootcamp_people.csv'
+  delimiter: ','
+  header_offset: 0
+  ids: ['email']
+  fields:
+    field_first_name:
+      name: first_name
+      label: 'First name'
+    field_last_name:
+      name: last_name
+      label: 'Last name'
+    field_email:
+      name: email
+      label: 'Email'
+    field_ip_address:
+      name: ip_address
+      label: 'IP address'
+    field_date_of_birth:
+      name: date_of_birth
+      label: 'Date of birth'
+  process:
+    field_first_name: first_name
+    field_last_name: last_name
+    field_email: email
+    field_ip_address: ip_address
+    field_date_of_birth: date_of_birth
+  destination:
+    plugin: 'entity:user'
