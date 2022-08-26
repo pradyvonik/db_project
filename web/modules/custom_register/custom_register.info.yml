@@ -1,0 +1,5 @@
+name: Custom register
+type: module
+description: Custom register form with mobile number and reCAPTCHA
+package: Custom
+core_version_requirement: ^9 || ^10
