@@ -1,10 +1,10 @@
 uuid: b9ab8c7b-4392-4e52-a92f-7ac3f31a85c4
 id: migrate_csv_users
 label: Migrate users from the csv file
-migration_group: default
+migration_group: migrate_csv_users
 source:
-  plugin: 'csv'
-  path: 'public://import-sources/bootcamp_people.csv'
+  plugin: csv
+  path: modules/custom_migrate_csv/assets/csv/bootcamp_people.csv
   delimiter: ','
   enclosure: '"'
   header_offset: 0
@@ -34,3 +34,9 @@ process:
   field_date_of_birth: date_of_birth
 destination:
   plugin: entity:user
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - csv_migration
+      - migrate_source_csv
