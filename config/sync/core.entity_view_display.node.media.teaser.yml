@@ -1,0 +1,29 @@
+uuid: 6eb23c99-2020-4e16-bb78-e9e9352db937
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.media.field_media_field
+    - node.type.media
+  module:
+    - custom_formatter
+    - user
+id: node.media.teaser
+targetEntityType: node
+bundle: media
+mode: teaser
+content:
+  field_media_field:
+    type: media_formatter
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  links: true

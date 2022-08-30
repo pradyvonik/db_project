@@ -1,0 +1,5 @@
+name: Custom formatter for the media
+type: module
+description: Custom formatter that shows only first image
+package: Custom
+core_version_requirement: ^9 || ^10
