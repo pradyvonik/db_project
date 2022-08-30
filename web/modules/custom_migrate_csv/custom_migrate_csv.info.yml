@@ -1,0 +1,10 @@
+name: Custom migration CSV
+type: module
+description: Custom module for users migration from .csv file
+package: Custom
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:migrate
+  - drupal:migrate_plus
+  - drupal:migrate_source_csv
+  - drupal:migrate_tools
