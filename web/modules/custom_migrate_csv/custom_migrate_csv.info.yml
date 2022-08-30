@@ -1,4 +1,4 @@
-name: custom_migrate_csv
+name: Custom migration CSV
 type: module
 description: Custom module for users migration from .csv file
 package: Custom

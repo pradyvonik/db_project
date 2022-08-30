@@ -1,4 +1,3 @@
-uuid: b9ab8c7b-4392-4e52-a92f-7ac3f31a85c4
 id: migrate_csv_users
 label: Migrate users from the csv file
 migration_group: migrate_csv_users
@@ -8,22 +7,21 @@ source:
   delimiter: ','
   enclosure: '"'
   header_offset: 0
-  ids:
-    - email
+  ids: [email]
   fields:
-    0:
+    first_name:
       name: first_name
       label: 'First name'
-    1:
+    last_name:
       name: last_name
       label: 'Last name'
-    2:
+    email:
       name: email
       label: 'Email'
-    3:
+    ip_address:
       name: ip_address
       label: 'IP address'
-    4:
+    date_of_birth:
       name: date_of_birth
       label: 'Date of birth'
 process:
