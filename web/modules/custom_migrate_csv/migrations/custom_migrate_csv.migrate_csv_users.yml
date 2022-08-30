@@ -1,6 +1,8 @@
 id: migrate_csv_users
 label: Migrate users from the csv file
-migration_group: migrate_csv_users
+migration_group: default
+migration_tags:
+  - user
 source:
   plugin: csv
   path: modules/custom_migrate_csv/assets/csv/bootcamp_people.csv
@@ -36,5 +38,5 @@ migration_dependencies: {}
 dependencies:
   enforced:
     module:
-      - csv_migration
+      - custom_migrate_csv
       - migrate_source_csv

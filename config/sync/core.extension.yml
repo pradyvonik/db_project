@@ -13,6 +13,7 @@ module:
   config_ignore: 0
   contact: 0
   contextual: 0
+  custom_migrate_csv: 0
   custom_register: 0
   custom_weather_module: 0
   datetime: 0
@@ -36,7 +37,6 @@ module:
   menu_ui: 0
   migrate: 0
   migrate_drupal: 0
-  migrate_drupal_ui: 0
   migrate_plus: 0
   migrate_source_csv: 0
   migrate_tools: 0
