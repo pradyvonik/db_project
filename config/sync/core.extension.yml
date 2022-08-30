@@ -13,6 +13,7 @@ module:
   config_ignore: 0
   contact: 0
   contextual: 0
+  custom_formatter: 0
   custom_migrate_csv: 0
   custom_register: 0
   custom_weather_module: 0

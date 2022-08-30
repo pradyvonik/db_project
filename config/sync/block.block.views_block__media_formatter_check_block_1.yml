@@ -1,0 +1,24 @@
+uuid: 9d9db37b-17e1-4343-b4d2-092b79fef2cb
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.media_formatter_check
+  module:
+    - views
+  theme:
+    - custom_olivero_db
+id: views_block__media_formatter_check_block_1
+theme: custom_olivero_db
+region: content_top
+weight: 0
+provider: null
+plugin: 'views_block:media_formatter_check-block_1'
+settings:
+  id: 'views_block:media_formatter_check-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

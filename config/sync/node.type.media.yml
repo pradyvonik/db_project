@@ -1,0 +1,17 @@
+uuid: 1719c68a-65ef-4aee-8d46-a7b41f5d9548
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Media
+type: media
+description: 'Content type  for the 5295 task'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

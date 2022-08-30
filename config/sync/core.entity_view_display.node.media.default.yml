@@ -1,0 +1,29 @@
+uuid: 33b5c192-c65f-4a66-a6e1-6090a31506c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.media.field_media_field
+    - node.type.media
+  module:
+    - user
+id: node.media.default
+targetEntityType: node
+bundle: media
+mode: default
+content:
+  field_media_field:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }
