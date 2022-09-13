@@ -1,0 +1,19 @@
+uuid: 57784817-aa76-4de4-998e-8313ec2c37ce
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_taxonomy_color
+    - taxonomy
+id: taxonomy_term.field_text_color
+field_name: field_text_color
+entity_type: taxonomy_term
+type: custom_taxonomy_color
+settings: {  }
+module: custom_taxonomy_color
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

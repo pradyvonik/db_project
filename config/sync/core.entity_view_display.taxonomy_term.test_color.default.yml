@@ -1,0 +1,38 @@
+uuid: 6d2c8efa-0fbd-4763-b535-6bb35b92ca4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.test_color.field_background_color
+    - field.field.taxonomy_term.test_color.field_text_color
+    - taxonomy.vocabulary.test_color
+  module:
+    - custom_taxonomy_color
+    - text
+id: taxonomy_term.test_color.default
+targetEntityType: taxonomy_term
+bundle: test_color
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_background_color:
+    type: custom_taxonomy_color_default_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_text_color:
+    type: custom_taxonomy_color_default_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

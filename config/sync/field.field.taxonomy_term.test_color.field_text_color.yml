@@ -1,0 +1,21 @@
+uuid: eeedd85a-88d6-45b3-8018-3afbbfac7167
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_text_color
+    - taxonomy.vocabulary.test_color
+  module:
+    - custom_taxonomy_color
+id: taxonomy_term.test_color.field_text_color
+field_name: field_text_color
+entity_type: taxonomy_term
+bundle: test_color
+label: 'Text color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: custom_taxonomy_color

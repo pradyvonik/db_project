@@ -1,0 +1,7 @@
+name: Custom taxonomy color
+type: module
+description: Custom module that configures your taxonomies colors
+package: Custom
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:taxonomy

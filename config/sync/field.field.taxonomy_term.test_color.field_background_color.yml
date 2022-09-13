@@ -1,0 +1,21 @@
+uuid: 48830088-0283-4c7f-adbb-cffa637fdb00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_background_color
+    - taxonomy.vocabulary.test_color
+  module:
+    - custom_taxonomy_color
+id: taxonomy_term.test_color.field_background_color
+field_name: field_background_color
+entity_type: taxonomy_term
+bundle: test_color
+label: 'Background color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: custom_taxonomy_color
