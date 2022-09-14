@@ -22,13 +22,6 @@ class CustomTaxonomyColorDivFormatter extends FormatterBase {
   /**
    * {@inheritdoc}
    */
-  public static function defaultSettings() {
-    return [] + parent::defaultSettings();
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $element = [];
 

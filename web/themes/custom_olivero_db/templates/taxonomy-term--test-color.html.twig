@@ -25,12 +25,10 @@
 #}
 <div {{ attributes.setAttribute('id', 'taxonomy-term-' ~ term.id).addClass(classes) }}>
   {% if name and not page %}
-    <div class='qqqqq' style="color:{{ elements.field_text_color.0 }};
+    <div style="color:{{ elements.field_text_color.0 }};
       background-color:{{ elements.field_background_color.0 }};">
-{#    <div class='qqqqq' style="color:green; background-color:pink;">#}
       {{ name }}
     </div>
   {% endif %}
   {{ content }}
-{#  <pre>{{ elements.field_background_color.0 }}</pre>#}
 </div>

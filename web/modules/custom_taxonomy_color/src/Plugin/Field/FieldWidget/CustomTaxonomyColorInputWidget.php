@@ -30,7 +30,7 @@ class CustomTaxonomyColorInputWidget extends WidgetBase {
       '#size' => 7,
       '#maxlength' => 7,
       '#element_validate' => [
-                [$this, 'hexColorValidation'],
+        [$this, 'hexColorValidation'],
       ],
     ];
     return ['value' => $element];
@@ -40,8 +40,7 @@ class CustomTaxonomyColorInputWidget extends WidgetBase {
    * {@inheritdoc}
    */
   public function hexColorValidation($element, FormStateInterface $form_state) {
-    $value = $element['#value'];
-    if (!preg_match('/^#([a-f0-9]{6})$/iD', strtolower($value))) {
+    if (!preg_match('/^#([a-f0-9]{6})$/iD', strtolower($element['#value']))) {
       $form_state->setError($element, 'Color is not in HEX format');
     }
   }
