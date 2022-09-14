@@ -16,6 +16,7 @@ module:
   custom_formatter: 0
   custom_migrate_csv: 0
   custom_register: 0
+  custom_taxonomy_color: 0
   custom_weather_module: 0
   datetime: 0
   dblog: 0

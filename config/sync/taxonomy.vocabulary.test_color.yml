@@ -1,0 +1,8 @@
+uuid: ab49e23d-d976-4a4c-902d-0350abd5c9a6
+langcode: en
+status: true
+dependencies: {  }
+name: 'Test color'
+vid: test_color
+description: 'Created for a testing purposes'
+weight: 0

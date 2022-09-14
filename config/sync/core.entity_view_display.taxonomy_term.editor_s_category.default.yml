@@ -1,0 +1,21 @@
+uuid: f4dac90c-1259-42bc-a21c-c2b5e2f677d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.editor_s_category
+  module:
+    - text
+id: taxonomy_term.editor_s_category.default
+targetEntityType: taxonomy_term
+bundle: editor_s_category
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
